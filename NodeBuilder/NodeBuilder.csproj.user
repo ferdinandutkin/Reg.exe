@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Page Update="Views\DynamicNodeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AnchorValueEditorView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WildcardEditorView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\QuantifierEditorView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\RegexTextValueEditorView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\TextValueEditorView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
