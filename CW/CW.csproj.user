@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="Login\BindablePasswordBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Login\LoginControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Login\MainLoginControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Login\Welcome.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Questions\QuestionsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Reference\ReferenceEditingControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="DialogService\ViewModels\DialogOkCancel\Views\QuestionDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Login\BindablePasswordBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Login\LoginControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Login\MainLoginControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Login\Welcome.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="NodeBuilder\Views\CustomNodeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Questions\QuestionsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Reference\ReferenceEditingControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Colors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\StyleDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\TemplateDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

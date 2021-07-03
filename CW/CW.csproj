@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>logopng.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DialogService\Views\**" />
+    <Compile Remove="QuestionList\**" />
+    <EmbeddedResource Remove="DialogService\Views\**" />
+    <EmbeddedResource Remove="QuestionList\**" />
+    <None Remove="DialogService\Views\**" />
+    <None Remove="QuestionList\**" />
+    <Page Remove="DialogService\Views\**" />
+    <Page Remove="QuestionList\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\logopng.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="3.6.0" />
+    <PackageReference Include="Fody" Version="6.5.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+    <PackageReference Include="NodeNetwork" Version="5.2.0" />
+    <PackageReference Include="NodeNetworkToolkit" Version="5.2.0" />
+    <PackageReference Include="ReactiveUI.Blend" Version="13.2.18" />
+    <PackageReference Include="ReactiveUI.Events.WPF" Version="13.2.18" />
+    <PackageReference Include="ReactiveUI.Fody" Version="13.3.2" />
+    <PackageReference Include="ReactiveUI.Validation" Version="2.1.1" />
+    <PackageReference Include="ReactiveUI.WPF" Version="13.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ConsoleClient\ConsoleClient.csproj" />
+    <ProjectReference Include="..\..\Core\Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\logopng.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="DialogService\ViewModels\DialogOkCancel\Views\QuestionDialog.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+  </ItemGroup>
+
+</Project>

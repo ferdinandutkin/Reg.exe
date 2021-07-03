@@ -1,0 +1,67 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key ="GeneralStyle" TargetType="FrameworkElement">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key ="ControlStyle" TargetType="Control">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Foreground" Value="white"/>
+    </Style>
+    <Style x:Key="TextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource GeneralStyle}">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Foreground" Value="white"/>
+    </Style>
+    <Style x:Key="TextBlockLeftAlignmentStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockStyle}">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+    <Style x:Key="ButtonStyle" TargetType="Button" BasedOn="{StaticResource ControlStyle}">
+        <Setter Property="MaxHeight" Value="200"/>
+        <Setter Property="MaxWidth" Value="400"/>
+    </Style>
+    <Style x:Key="StretchButtonStyle" TargetType="Button" BasedOn="{StaticResource ControlStyle}">
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Background" Value="BlueViolet"/>
+    </Style>
+    <Style x:Key="DataGridColumnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource ControlStyle}" >
+        <Setter Property="Background" Value="#585858
+"/>
+        <Setter Property="Padding" Value="5, 5, 5, 5"/>
+        <Setter Property="BorderThickness" Value="0,1,1,1"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+    </Style>
+    <Style x:Key="DataGridRowStyle" TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource ControlStyle}">
+        <Setter Property="Background" Value="#FF6E6E6E"/>
+        <Setter Property="Padding" Value="20"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+    <Style x:Key="Title" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockLeftAlignmentStyle}">
+         <Setter Property="FontSize" Value="30"/>
+    </Style>
+    
+    
+    <Style x:Key="DataGrid" TargetType="{x:Type DataGrid}" BasedOn="{StaticResource ControlStyle}">
+        
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="AutoGenerateColumns" Value="False"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="BorderThickness" Value="1,1,1,1"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="Background" Value="#8B8B8B"/>
+        <Setter Property="Margin" Value="10"/>
+
+
+    </Style>
+    
+    
+    
+    
+    
+  
+</ResourceDictionary>
