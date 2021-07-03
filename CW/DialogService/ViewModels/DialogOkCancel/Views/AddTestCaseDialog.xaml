@@ -1,0 +1,32 @@
+﻿<rxui:ReactiveWindow x:Class="CW.Dialog.Views.AddTestCaseDialog"
+                     Background="{StaticResource  MiddleGreyBrush}"
+							  x:TypeArguments="vms:AddTestCaseDialogViewModel"
+							   xmlns:rxui="http://reactiveui.net"
+                     Height="450"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vms="clr-namespace:CW.Dialog.ViewModels" 
+			 mc:Ignorable="d" 
+							  xmlns:local="clr-namespace:CW.Dialog.Views" xmlns:views="clr-namespace:CW.Views"
+						 d:DesignWidth="800">
+
+    <StackPanel >
+		<views:AddTestCase x:Name="addTestCase"/>
+        <StackPanel Orientation="Horizontal" 
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Margin="70 0 20 20">
+            <Button Style="{StaticResource BaseButton}" 
+                    x:Name="okButton" 
+                    Content="Ок" 
+                    Click="OkCancelButton_Click"/>
+            <Button Style="{StaticResource BaseButton}" 
+                    x:Name="cancelButton" 
+                    Click="OkCancelButton_Click" 
+                    Content="Отмена"/>
+		</StackPanel>
+	</StackPanel>
+
+</rxui:ReactiveWindow>

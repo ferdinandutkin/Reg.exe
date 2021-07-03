@@ -1,0 +1,64 @@
+﻿<rxui:ReactiveUserControl
+    x:TypeArguments="viewmodels:LoginViewModel"
+    x:Class="CW.Views.LoginControl"
+      
+      xmlns:rxui="http://reactiveui.net"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:viewmodels="clr-namespace:CW.ViewModels" xmlns:views="clr-namespace:CW.Views"
+    mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <Grid DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type views:LoginControl}}, Path=ViewModel}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" 
+                      HorizontalScrollBarVisibility="Auto">
+            <StackPanel VerticalAlignment="Center" 
+                        HorizontalAlignment="Center"
+                        TextBlock.TextAlignment="Center">
+                <Border Background="{StaticResource DarkGreyBrush}"
+                        Padding="20 40 20 20" 
+                            Margin="50 20 50 10"
+                            CornerRadius="10"
+                            Width="350">
+                    <StackPanel>
+                        <TextBlock Foreground="{StaticResource OffWhiteBrush}"
+                                   FontSize="20" 
+                                   Text="Логин:"/>
+                        <TextBox Foreground="White"
+                                 Background="Transparent" 
+                                 x:Name="loginTextBox"
+                                 Style="{StaticResource CustomTextBox}"/>
+
+                        <TextBlock  Foreground="{StaticResource OffWhiteBrush}"
+                                    FontSize="20" 
+                                    Text="Пароль:"
+                                    Margin="0 20 0 0"/>
+                        <views:BindablePasswordBox Password="{Binding Password, Mode=TwoWay}" 
+                                                   Background="Transparent" 
+                                                   Foreground="White" 
+                                                   x:Name="passwordTextBox"/>
+
+
+                        <Button Content="Войти" 
+                                Style="{StaticResource BaseButton}" 
+                                x:Name="loginButton"
+                                HorizontalAlignment="Center"
+                                Margin="0 20 0 0"/>
+                       
+                        <Button Content="Регистрация"  
+                                Style="{StaticResource BaseButton}" 
+                                x:Name="registerButton"
+                                HorizontalAlignment="Center"/>
+                        <TextBlock Style="{StaticResource TextBlockStyle}" x:Name="errors"/>
+                    </StackPanel>
+                </Border>
+                <Button Content="Остаться анонимным"
+                        Style="{StaticResource BaseButton}"
+                        x:Name="anonymousButton"
+                        HorizontalAlignment="Center"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</rxui:ReactiveUserControl>

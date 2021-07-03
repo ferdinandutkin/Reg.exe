@@ -1,0 +1,106 @@
+﻿<UserControl x:Class="NodeBuilder.Views.WildcardEditorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+			 xmlns:models="clr-namespace:NodeBuilder.Models"
+             xmlns:local="clr-namespace:NodeBuilder.Views"
+			 mc:Ignorable="d" 
+             d:DesignHeight="20" d:DesignWidth="100">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type GroupBox}">
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+    </UserControl.Resources>
+
+
+    <StackPanel DataContext="{Binding RelativeSource = {RelativeSource AncestorType= {x:Type local:WildcardEditorView}}, Path= ViewModel}">
+        
+        <GroupBox Header="Wildcard type" BorderThickness="0">
+            <ComboBox 
+			x:Name="wildcardType"     
+          SelectedValuePath="Value"
+          DisplayMemberPath="Description"
+        />
+        </GroupBox>
+       
+
+
+        <GroupBox Header="Invert" BorderThickness="0">
+            <GroupBox.Style>
+                <Style TargetType="{x:Type GroupBox}">
+                    <Setter Property="Visibility" Value="Visible"/>
+                    <Style.Triggers>
+
+                        <DataTrigger Binding="{Binding Value.WildcardType}" Value="Everything">
+                            <Setter Property ="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+
+                    </Style.Triggers>
+                </Style>
+            </GroupBox.Style>
+            <CheckBox x:Name="invert"/>
+        </GroupBox>
+
+
+        <GroupBox Header="Match newlines" BorderThickness="0">
+            <GroupBox.Style>
+                <Style TargetType="{x:Type GroupBox}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+
+                        <DataTrigger Binding="{Binding Value.WildcardType}" Value="Everything">
+                            <Setter Property ="Visibility" Value="Visible"/>
+                        </DataTrigger>
+
+                    </Style.Triggers>
+                </Style>
+            </GroupBox.Style>
+            <CheckBox x:Name="matchNewlines"/>
+        </GroupBox>
+
+        <StackPanel>
+            <StackPanel.Style>
+                <Style TargetType="{x:Type StackPanel}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+
+                        <DataTrigger Binding="{Binding Value.WildcardType}" Value="Custom">
+                            <Setter Property ="Visibility" Value="Visible"/>
+                        </DataTrigger>
+
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Style>
+
+
+            <GroupBox Header="Whitespace">
+                <CheckBox x:Name="whitespace"/>
+            </GroupBox>
+            <GroupBox Header="Uppercase Letters">
+                <CheckBox x:Name="uppercaseLetters"/>
+            </GroupBox>
+            <GroupBox Header="Lowercase Letters">
+                <CheckBox x:Name="lowercaseLetters"/>
+            </GroupBox>
+            <GroupBox Header="Digits">
+                <CheckBox x:Name="digits"/>
+            </GroupBox>
+            <GroupBox Header="Underscore">
+                <CheckBox x:Name="underscore"/>
+            </GroupBox>
+        </StackPanel>
+
+    </StackPanel>
+
+	
+
+ 
+
+
+
+
+
+
+</UserControl>

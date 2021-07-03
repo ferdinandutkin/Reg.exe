@@ -1,0 +1,64 @@
+﻿<rxui:ReactiveUserControl
+             x:Class="CW.Views.QuestionsView"
+               x:TypeArguments="viewmodels:QuestionsViewModel"
+             xmlns:rxui="http://reactiveui.net"
+    
+    
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:CW.Views"
+              xmlns:viewmodels="clr-namespace:CW.ViewModels" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:QuestionsView}}, Path=ViewModel}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <!--<ColumnDefinition Width="4*"/>-->
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Редактирование вопросов" Style="{StaticResource PageTitle}"/>
+                <!--<Button Template="{DynamicResource ButtonTemplate}" Grid.Column="1" x:Name="newTest" Content ="Новый тест" Style="{StaticResource StretchButtonStyle}"/>-->
+
+            </Grid>
+
+
+
+
+        <DataGrid  Grid.Row ="1" x:Name="grid" ItemsSource="{Binding Model}" 
+                   Style="{StaticResource DataGrid}" 
+                   IsReadOnly="False"
+                   ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}"
+                   RowStyle="{StaticResource DataGridRowStyle}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Binding="{Binding Name}" Header="Название"/>
+                <DataGridTextColumn Width="*" Binding="{Binding Text}" Header="Текст вопроса"/>
+
+                <DataGridTextColumn Width="*" Binding="{Binding Difficulty}" Header="Сложность"/>
+                <DataGridTemplateColumn Width="0.5*" Header="Подробнее">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="..." Command="{Binding RelativeSource={RelativeSource AncestorType=local:QuestionsView}, Path=ViewModel.OpenQuestionWindow}"
+                                    CommandParameter="{Binding}"
+                                    />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        
+
+    </Grid>
+</rxui:ReactiveUserControl>
