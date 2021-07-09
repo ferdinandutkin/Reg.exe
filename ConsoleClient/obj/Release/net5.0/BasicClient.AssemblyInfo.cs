@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("BasicClient")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("ClientCode")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("BasicClient")]
-[assembly: System.Reflection.AssemblyTitleAttribute("BasicClient")]
+[assembly: System.Reflection.AssemblyProductAttribute("ClientCode")]
+[assembly: System.Reflection.AssemblyTitleAttribute("ClientCode")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.
