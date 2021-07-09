@@ -20,15 +20,7 @@ namespace ConsoleClient
             client.DefaultRequestHeaders.Remove("Authorization");
             CurrentUser = new();
         }
-        public bool Ping()
-        {
-            //var ping = new System.Net.NetworkInformation.Ping();
-
-            //var res = ping.Send(client.BaseAddress.ToString());
-
-            //return res.Status == System.Net.NetworkInformation.IPStatus.Success;
-            return true;
-        }
+     
         public event Action UserChanged;
 
 
@@ -49,7 +41,7 @@ namespace ConsoleClient
                 client.DefaultRequestHeaders.Add("Authorization", $"Bearer {value.RawData}");
 
 
-                int userId = int.Parse(value.Claims.First().Value); //не забыть поменять на что-то более умное     
+                int userId = int.Parse(value.Claims.First().Value);  
                 CurrentUser = new()
                 {
                     Roles = value

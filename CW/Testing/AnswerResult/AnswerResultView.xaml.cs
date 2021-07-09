@@ -17,7 +17,9 @@ namespace CW.Views
             {
                 this.OneWayBind(ViewModel, vm => vm.Model.Answer.Question.Name, v => v.questionName.Text).DisposeWith(d);
 
-                this.OneWayBind(ViewModel, vm => vm.Model.Result, v => v.isRight.Text).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.Model.Answer.Question.Difficulty, v => v.score.Text).DisposeWith(d);
+
+                this.OneWayBind(ViewModel, vm => vm.Model.Result, v => v.isCorrect.IsChecked).DisposeWith(d);
             }
             );
         }

@@ -46,23 +46,7 @@ namespace ConsoleClient
 
             protected async ValueTask<U> BasicGetAsync<U>(params object[] additionalParams)
             {
-                //var request = new HttpRequestMessage(HttpMethod.Get, BuildParams(additionalParams));
-
-                //var res = await client.SendAsync(request);
-
-                //if (res.IsSuccessStatusCode)
-                //{
-                //    return await JsonSerializer.DeserializeAsync<U>(await res.Content.ReadAsStreamAsync(), options);
-                //}
-                //else return default;
-
-                ////var response = client.SendAsync(request).Result;
-                ////var req = new HttpRe
-                ////var res = await client.GetStreamAsync(BuildParams(additionalParams));
-
-                ////return await JsonSerializer.DeserializeAsync<U>(res, options);
-                //////var @params = BuildParams(additionalParams);
-                
+               
 
                 return await client.GetFromJsonAsync<U>(BuildParams(additionalParams), options).ConfigureAwait(false);
                

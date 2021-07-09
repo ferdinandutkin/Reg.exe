@@ -25,11 +25,11 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <!--<ColumnDefinition Width="4*"/>-->
+                 
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="Редактирование вопросов" Style="{StaticResource PageTitle}"/>
-                <!--<Button Template="{DynamicResource ButtonTemplate}" Grid.Column="1" x:Name="newTest" Content ="Новый тест" Style="{StaticResource StretchButtonStyle}"/>-->
+ 
 
             </Grid>
 

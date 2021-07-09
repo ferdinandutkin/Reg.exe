@@ -8,12 +8,14 @@
           
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel>
+    <StackPanel Orientation="Horizontal">
         <TextBlock x:Name="questionName" 
                    Foreground="{StaticResource OffWhiteBrush}"
                    FontSize="20"/>
-        <TextBlock x:Name="isRight" 
+        <TextBlock x:Name="score" 
                    Foreground="{StaticResource OffWhiteBrush}"
                    FontSize="20"/>
+        <CheckBox x:Name="isCorrect" Content="Правильно"
+                   Foreground="{StaticResource OffWhiteBrush}"/>
     </StackPanel>
 </rxui:ReactiveUserControl>

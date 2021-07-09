@@ -15,7 +15,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- тут будут страницы -->
-        <local:MenuEntryHostView Grid.Column="1" EntryBackground="{StaticResource MiddleGreyBrush}" x:Name="host" Foreground="{StaticResource OffWhiteBrush}"/>
+        <local:MenuEntryHostView Grid.Column="1"  EntryBackground="{StaticResource MiddleGreyBrush}" x:Name="host" Foreground="{StaticResource OffWhiteBrush}"/>
         
         <!-- связь с меню -->
         <local:MenuControl Grid.Column="0"  x:Name="menu"/>

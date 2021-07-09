@@ -1,0 +1,13 @@
+C:\Users\ja\source\repos\oop_cw\Core\bin\Debug\net5.0\Core.deps.json
+C:\Users\ja\source\repos\oop_cw\Core\bin\Debug\net5.0\Core.dll
+C:\Users\ja\source\repos\oop_cw\Core\bin\Debug\net5.0\ref\Core.dll
+C:\Users\ja\source\repos\oop_cw\Core\bin\Debug\net5.0\Core.pdb
+C:\Users\ja\source\repos\oop_cw\Core\obj\Debug\net5.0\Core.csprojAssemblyReference.cache
+C:\Users\ja\source\repos\oop_cw\Core\obj\Debug\net5.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ja\source\repos\oop_cw\Core\obj\Debug\net5.0\Core.AssemblyInfoInputs.cache
+C:\Users\ja\source\repos\oop_cw\Core\obj\Debug\net5.0\Core.AssemblyInfo.cs
+C:\Users\ja\source\repos\oop_cw\Core\obj\Debug\net5.0\Core.csproj.CoreCompileInputs.cache
+C:\Users\ja\source\repos\oop_cw\Core\obj\Debug\net5.0\Core.csproj.Fody.CopyLocal.cache
+C:\Users\ja\source\repos\oop_cw\Core\obj\Debug\net5.0\Core.dll
+C:\Users\ja\source\repos\oop_cw\Core\obj\Debug\net5.0\ref\Core.dll
+C:\Users\ja\source\repos\oop_cw\Core\obj\Debug\net5.0\Core.pdb
