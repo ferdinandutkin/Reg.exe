@@ -27,7 +27,7 @@
                                    Text="Логин:"/>
                         <TextBox Foreground="White"
                                  Background="Transparent" 
-                                 x:Name="loginTextBox"
+                                 x:Name="LoginTextBox"
                                  Style="{StaticResource CustomTextBox}"/>
 
                         <TextBlock  Foreground="{StaticResource OffWhiteBrush}"
@@ -37,25 +37,25 @@
                         <views:BindablePasswordBox Password="{Binding Password, Mode=TwoWay}" 
                                                    Background="Transparent" 
                                                    Foreground="White" 
-                                                   x:Name="passwordTextBox"/>
+                                                   x:Name="PasswordTextBox"/>
 
 
                         <Button Content="Войти" 
                                 Style="{StaticResource BaseButton}" 
-                                x:Name="loginButton"
+                                x:Name="LoginButton"
                                 HorizontalAlignment="Center"
                                 Margin="0 20 0 0"/>
                        
                         <Button Content="Регистрация"  
                                 Style="{StaticResource BaseButton}" 
-                                x:Name="registerButton"
+                                x:Name="RegisterButton"
                                 HorizontalAlignment="Center"/>
-                        <TextBlock Style="{StaticResource TextBlockStyle}" x:Name="errors"/>
+                        <TextBlock Style="{StaticResource TextBlockStyle}" x:Name="Errors"/>
                     </StackPanel>
                 </Border>
                 <Button Content="Остаться анонимным"
                         Style="{StaticResource BaseButton}"
-                        x:Name="anonymousButton"
+                        x:Name="AnonymousButton"
                         HorizontalAlignment="Center"/>
             </StackPanel>
  

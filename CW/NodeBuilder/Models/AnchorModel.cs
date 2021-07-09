@@ -1,8 +1,5 @@
 ﻿using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace NodeBuilder.Models
 {
@@ -17,7 +14,7 @@ namespace NodeBuilder.Models
     }
     public class AnchorModel : ReactiveObject
     {
- 
+
         [Reactive]
         public AnchorType AnchorType
         {
@@ -34,8 +31,8 @@ namespace NodeBuilder.Models
                 AnchorType.NotWordBoundary => @"\B",
                 _ => "",
             };
-      
 
-       
+
+
     }
 }

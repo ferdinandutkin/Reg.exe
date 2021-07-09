@@ -36,7 +36,7 @@
 
 
 
-        <DataGrid  Grid.Row ="1" x:Name="grid" ItemsSource="{Binding Model}" 
+        <DataGrid  Grid.Row ="1" x:Name="Grid" ItemsSource="{Binding Model}" 
                    Style="{StaticResource DataGrid}" 
                    IsReadOnly="False"
                    ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}"

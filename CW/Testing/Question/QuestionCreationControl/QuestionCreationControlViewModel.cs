@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace CW.ViewModels
 {
-    public class QuestionCreationControlViewModel 
+    public class QuestionCreationControlViewModel
     {
         [Reactive]
         public InputQuestion Model
@@ -38,7 +38,7 @@ namespace CW.ViewModels
 
 
 
- 
+
             var vm = new AddTestCaseDialogViewModel
             {
                 AddTestCaseViewModel = new()
@@ -56,7 +56,7 @@ namespace CW.ViewModels
             }
         }
 
-     
-        
+
+
     }
 }

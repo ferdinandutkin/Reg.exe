@@ -3,11 +3,6 @@ using CW.Views;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
 
 namespace CW.ViewModels
@@ -33,16 +28,16 @@ namespace CW.ViewModels
         public ICommand LogOutCommand => ReactiveCommand.Create(LogOutAction);
         static WelcomeViewModel()
         {
-          
+
             Splat.Locator.CurrentMutable.Register(() => new Welcome(), typeof(IViewFor<WelcomeViewModel>));
         }
 
- 
+
         public WelcomeViewModel()
         {
             ServerInteractionSigleton.Instance.UserChanged += () =>
             {
-                this.UserName = ServerInteractionSigleton.Instance.CurrentUser.User.Name;
+                UserName = ServerInteractionSigleton.Instance.CurrentUser.User.Name;
             };
         }
 

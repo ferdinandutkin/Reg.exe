@@ -21,14 +21,14 @@ namespace CWWebApi.Data
         public DbSet<ApiUser> ApiUsers { get; set; }
 
         public DbSet<Role> ApiUserRoles { get; set; }
-       
 
 
-        
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            
+
 
             modelBuilder.Entity<InputQuestion>()
                .Ignore(r => r.ThrownExceptions)
@@ -62,9 +62,9 @@ namespace CWWebApi.Data
             modelBuilder
                 .Entity<User>()
                 .Property(u => u.Name).IsRequired();
- 
 
-        
+
+
 
             modelBuilder
                 .Entity<User>()

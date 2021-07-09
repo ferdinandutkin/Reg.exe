@@ -3114,7 +3114,7 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "ConsoleClient/1.0.0": {
+      "ClientCode/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
@@ -3122,10 +3122,10 @@
           "Core": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/ConsoleClient.dll": {}
+          "bin/placeholder/ClientCode.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConsoleClient.dll": {}
+          "bin/placeholder/ClientCode.dll": {}
         }
       },
       "Core/1.0.0": {
@@ -10129,10 +10129,10 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "ConsoleClient/1.0.0": {
+    "ClientCode/1.0.0": {
       "type": "project",
-      "path": "../ConsoleClient/ConsoleClient.csproj",
-      "msbuildProject": "../ConsoleClient/ConsoleClient.csproj"
+      "path": "../ConsoleClient/BasicClient.csproj",
+      "msbuildProject": "../ConsoleClient/BasicClient.csproj"
     },
     "Core/1.0.0": {
       "type": "project",
@@ -10147,7 +10147,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
-      "ConsoleClient >= 1.0.0",
+      "ClientCode >= 1.0.0",
       "Core >= 1.0.0",
       "Extended.Wpf.Toolkit >= 3.6.0",
       "Fody >= 6.5.1",
@@ -10168,11 +10168,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ja\\source\\repos\\oop_cw\\CW\\CW.csproj",
+      "projectUniqueName": "C:\\Users\\ja\\Source\\Repos\\oop_cw\\CW\\CW.csproj",
       "projectName": "CW",
-      "projectPath": "C:\\Users\\ja\\source\\repos\\oop_cw\\CW\\CW.csproj",
+      "projectPath": "C:\\Users\\ja\\Source\\Repos\\oop_cw\\CW\\CW.csproj",
       "packagesPath": "C:\\Users\\ja\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ja\\source\\repos\\oop_cw\\CW\\obj\\",
+      "outputPath": "C:\\Users\\ja\\Source\\Repos\\oop_cw\\CW\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -10193,11 +10193,11 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\ja\\source\\repos\\oop_cw\\ConsoleClient\\ConsoleClient.csproj": {
-              "projectPath": "C:\\Users\\ja\\source\\repos\\oop_cw\\ConsoleClient\\ConsoleClient.csproj"
+            "C:\\Users\\ja\\Source\\Repos\\oop_cw\\ConsoleClient\\BasicClient.csproj": {
+              "projectPath": "C:\\Users\\ja\\Source\\Repos\\oop_cw\\ConsoleClient\\BasicClient.csproj"
             },
-            "C:\\Users\\ja\\source\\repos\\oop_cw\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\ja\\source\\repos\\oop_cw\\Core\\Core.csproj"
+            "C:\\Users\\ja\\Source\\Repos\\oop_cw\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\ja\\Source\\Repos\\oop_cw\\Core\\Core.csproj"
             }
           }
         }

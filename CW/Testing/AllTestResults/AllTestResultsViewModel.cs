@@ -3,7 +3,6 @@ using CW.Data;
 using CW.Views;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
-using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace CW.ViewModels

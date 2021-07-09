@@ -1,5 +1,4 @@
 ﻿using Core.Models;
-using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using System;
 using System.Collections.ObjectModel;
@@ -16,11 +15,11 @@ namespace ConsoleClient
 
         public void LogOut()
         {
-            this.token = new JwtSecurityToken();
+            token = new JwtSecurityToken();
             client.DefaultRequestHeaders.Remove("Authorization");
             CurrentUser = new();
         }
-     
+
         public event Action UserChanged;
 
 
@@ -29,7 +28,7 @@ namespace ConsoleClient
         {
             get;
             private set;
-            
+
         } = new();
         private JwtSecurityToken Token
         {
@@ -41,7 +40,7 @@ namespace ConsoleClient
                 client.DefaultRequestHeaders.Add("Authorization", $"Bearer {value.RawData}");
 
 
-                int userId = int.Parse(value.Claims.First().Value);  
+                int userId = int.Parse(value.Claims.First().Value);
                 CurrentUser = new()
                 {
                     Roles = value

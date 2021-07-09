@@ -1,6 +1,5 @@
 ﻿using CW.Dialog.Views;
 using CW.ViewModels;
-using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 
 
@@ -11,7 +10,7 @@ namespace CW.Dialog.ViewModels
         static QuestionDialogViewModel()
         {
             Splat.Locator.CurrentMutable.Register(() => new QuestionDialog(), typeof(IDialogService<QuestionDialogViewModel>));
-           
+
         }
 
         [Reactive]

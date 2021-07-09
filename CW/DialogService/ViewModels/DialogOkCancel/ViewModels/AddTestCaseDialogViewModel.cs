@@ -1,6 +1,5 @@
 ﻿using CW.Dialog.Views;
 using CW.ViewModels;
-using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 
 
@@ -10,12 +9,12 @@ namespace CW.Dialog.ViewModels
     {
 
         [Reactive]
-        public bool IsNew {get; set;}
+        public bool IsNew { get; set; }
 
         static AddTestCaseDialogViewModel()
         {
-            Splat.Locator.CurrentMutable.Register(() => new AddTestCaseDialog(), typeof(IDialogService <AddTestCaseDialogViewModel>));
-           
+            Splat.Locator.CurrentMutable.Register(() => new AddTestCaseDialog(), typeof(IDialogService<AddTestCaseDialogViewModel>));
+
         }
 
         [Reactive]

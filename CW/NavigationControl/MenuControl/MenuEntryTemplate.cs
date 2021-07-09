@@ -7,7 +7,7 @@ namespace CWRegexTester
 
         public MenuEntryTemplate(Func<object> entryFactory, MenuEntryPreview previewInstance)
             => (EntryFactory, PreviewInstance) = (entryFactory, previewInstance);
-         
+
         public Func<object> EntryFactory
         { get; set; }
 

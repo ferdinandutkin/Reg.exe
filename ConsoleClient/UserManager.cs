@@ -12,28 +12,20 @@ namespace ConsoleClient
         public class UserManager : BasicApiControllerInteraction
         {
             readonly ServerInteraction parent;
-  
 
 
 
 
-            public UserManager(ServerInteraction parent) : base(parent, "User")
-            {
-                this.parent = parent;
-                
-            }
 
-          
+            public UserManager(ServerInteraction parent) : base(parent, "User") => this.parent = parent;
+
 
             public bool LoginAsAnonymous() => Login("Anonymous", "Anon");
-            public bool IsRegistered(string login)
-            {
-                return BasicGet<bool>("is-registered", login);
-            }
+            public bool IsRegistered(string login) => BasicGet<bool>("is-registered", login);
 
             public bool Register(string login, string password)
             {
- 
+
                 bool result = default;
 
 
@@ -65,12 +57,12 @@ namespace ConsoleClient
             public bool Login(string login, string password)
             {
 
-                string token = string.Empty;
+                var token = string.Empty;
 
 
                 var passwordHash = PasswordHasher.ComputeHash(password);
 
-               
+
 
                 var request = new HttpRequestMessage(HttpMethod.Get, $"{routeToController}/login/")
                 {
@@ -83,21 +75,19 @@ namespace ConsoleClient
                 var response = client.SendAsync(request).Result;
 
                 Console.WriteLine(response.Content);
-                if (response.IsSuccessStatusCode)
-                {
 
-                    var read = response.Content.ReadAsStringAsync().Result;
+                if (!response.IsSuccessStatusCode) return token != string.Empty;
 
-                    var handler = new JwtSecurityTokenHandler();
-                    var jsonToken = handler.ReadJwtToken(read);
+                var read = response.Content.ReadAsStringAsync().Result;
+
+                var handler = new JwtSecurityTokenHandler();
+                var jsonToken = handler.ReadJwtToken(read);
 
 
 
-                    parent.Token = jsonToken;
+                parent.Token = jsonToken;
 
-                    token = jsonToken.RawData;
-
-                }
+                token = jsonToken.RawData;
 
 
 

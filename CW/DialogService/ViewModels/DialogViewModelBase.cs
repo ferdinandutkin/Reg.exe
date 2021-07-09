@@ -13,8 +13,8 @@ namespace CW.Dialog.ViewModels
 
         public void CloseDialogWithResult(Window dialog, DialogResult result)
         {
-          
-            this.UserDialogResult = result;
+
+            UserDialogResult = result;
             if (dialog != null)
                 dialog.DialogResult = true;
         }

@@ -1,7 +1,5 @@
 ﻿using Core.Classes;
-using Core.Models;
 using CWWebApi.Data;
-using CWWebApi.Security;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;

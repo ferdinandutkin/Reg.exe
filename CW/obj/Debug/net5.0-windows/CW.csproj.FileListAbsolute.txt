@@ -1,13 +1,9 @@
-C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\ConsoleClient.deps.json
-C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\ConsoleClient.runtimeconfig.json
-C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\ConsoleClient.runtimeconfig.dev.json
 C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\CWWebApi.deps.json
 C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\CWWebApi.runtimeconfig.json
 C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\CWWebApi.runtimeconfig.dev.json
 C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\appsettings.Development.json
 C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\appsettings.json
 C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\CWWebApi.exe
-C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\ConsoleClient.exe
 C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\CW.exe
 C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\CW.deps.json
 C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\CW.runtimeconfig.json
@@ -160,10 +156,8 @@ C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\runtimes\win-x86\nat
 C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\ConsoleClient.dll
 C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\Core.dll
 C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\CWWebApi.dll
-C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\ConsoleClient.pdb
 C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\Core.pdb
 C:\Users\ja\source\repos\oop_cw\CW\bin\Debug\net5.0-windows\CWWebApi.pdb
 C:\Users\ja\source\repos\oop_cw\CW\obj\Debug\net5.0-windows\CW.csprojAssemblyReference.cache
@@ -251,3 +245,5 @@ C:\Users\ja\source\repos\oop_cw\CW\obj\Debug\net5.0-windows\CW.dll
 C:\Users\ja\source\repos\oop_cw\CW\obj\Debug\net5.0-windows\ref\CW.dll
 C:\Users\ja\source\repos\oop_cw\CW\obj\Debug\net5.0-windows\CW.pdb
 C:\Users\ja\source\repos\oop_cw\CW\obj\Debug\net5.0-windows\CW.genruntimeconfig.cache
+C:\Users\ja\Source\Repos\oop_cw\CW\bin\Debug\net5.0-windows\BasicClient.dll
+C:\Users\ja\Source\Repos\oop_cw\CW\bin\Debug\net5.0-windows\BasicClient.pdb

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oSbVThq9YvcKdZZLBitWGpHnhw1rO3cl7w1O8xBuSe6uphbesAeG4+A4i9s2o7aQs6g0Wj/u3XeCPK7WpklnrA==",
+  "dgSpecHash": "4yT9/1ncQKdF7zReh7xRx3qRtmEMGF6sIaM7CSUAXu+A6sBMLIiF9EhQXtPSkWCn1tXjhjx6KLbVUz3lGYmvCQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ja\\source\\repos\\oop_cw\\ConsoleClient\\ConsoleClient.csproj",
+  "projectFilePath": "C:\\Users\\ja\\Source\\Repos\\oop_cw\\ConsoleClient\\BasicClient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ja\\.nuget\\packages\\dynamicdata\\7.1.16\\dynamicdata.7.1.16.nupkg.sha512",
     "C:\\Users\\ja\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",

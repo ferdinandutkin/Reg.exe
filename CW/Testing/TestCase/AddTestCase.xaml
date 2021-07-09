@@ -29,7 +29,7 @@
                        Foreground="{StaticResource OffWhiteBrush}"
                        HorizontalAlignment="Center"
                        Margin="0 10 0 0"/>
-            <TextBox x:Name="textInput"
+            <TextBox x:Name="TextInput"
                      Style="{StaticResource ForTesting}"
                      Margin="10"/>
         </StackPanel>
@@ -39,7 +39,7 @@
                        Foreground="{StaticResource OffWhiteBrush}"
                        HorizontalAlignment="Center"
                        Margin="0 10 0 0"/>
-            <Button x:Name="addToSelected" 
+            <Button x:Name="AddToSelected" 
                     Content="Добавить выделенное" 
                     Click="AddToSelected_Click"
                     Style="{StaticResource BaseButton}"
@@ -52,10 +52,10 @@
                        Foreground="{StaticResource OffWhiteBrush}"
                        HorizontalAlignment="Center"
                        Margin="0 10 0 0"/>
-            <TextBox x:Name="regexInput"
+            <TextBox x:Name="RegexInput"
                      Style="{StaticResource ForTesting}"
                      Margin="10 10 10 5"/>
-            <Button x:Name="applyRegex" 
+            <Button x:Name="ApplyRegex" 
                     Content="Применить выражение"
                     Style="{StaticResource BaseButton}"
                     FontSize="14"
@@ -70,7 +70,7 @@
                        Foreground="{StaticResource OffWhiteBrush}"
                        HorizontalAlignment="Center"
                        Margin="0 10 0 0"/>
-            <TextBlock x:Name="resultOutput"
+            <TextBlock x:Name="ResultOutput"
                           Style="{StaticResource TextBlockStyle}"
 						 behaviours:PositionsBehaviuor.Text="{Binding Model.Text, Mode=Default, UpdateSourceTrigger=PropertyChanged}" 
 				   behaviours:PositionsBehaviuor.SelectedPositions="{Binding Model.Positions}"
@@ -82,7 +82,7 @@
 
 
 
-            <DataGrid  ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" IsReadOnly="False" RowStyle="{StaticResource DataGridRowStyle}" Style="{StaticResource DataGrid}" RowHeight="NaN" CanUserSortColumns="False" CanUserResizeRows="False" x:Name="positions"  ItemsSource="{Binding Model.Positions}">
+            <DataGrid  ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" IsReadOnly="False" RowStyle="{StaticResource DataGridRowStyle}" Style="{StaticResource DataGrid}" RowHeight="NaN" CanUserSortColumns="False" CanUserResizeRows="False" x:Name="Positions"  ItemsSource="{Binding Model.Positions}">
                 <DataGrid.Columns>
                     <DataGridTemplateColumn  Width="*" Header="From" >
                         <DataGridTemplateColumn.CellTemplate>

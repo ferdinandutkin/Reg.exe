@@ -15,9 +15,9 @@ namespace CW.Views
             this.WhenActivated(
                 d =>
                 {
-                 
-                    this.OneWayBind(ViewModel, vm => vm.Model, v => v.results.ItemsSource).DisposeWith(d);
-                    this.BindCommand(ViewModel, vm => vm.StartNewTest, v => v.newTest).DisposeWith(d);
+
+                    this.OneWayBind(ViewModel, vm => vm.Model, v => v.Results.ItemsSource).DisposeWith(d);
+                    this.BindCommand(ViewModel, vm => vm.StartNewTest, v => v.NewTest).DisposeWith(d);
                 });
         }
     }

@@ -10,7 +10,7 @@ using System.Reactive.Linq;
 namespace CWRegexTester
 {
 
-    public  class ReferenceControlViewModel : ReactiveObject
+    public class ReferenceControlViewModel : ReactiveObject
     {
 
 
@@ -23,7 +23,7 @@ namespace CWRegexTester
 
         [Reactive]
         public string EmptyLabel
-        { 
+        {
             get; set;
         }
         public ISourceList<ReferenceEntry> Entries { get; } = new SourceList<ReferenceEntry>();
@@ -43,9 +43,9 @@ namespace CWRegexTester
             Title = "Reference";
             EmptyLabel = "No info found.";
 
-            var entries =  (UnitOfWorkSingleton.Instance.RefenceRepository as IRepository<ReferenceEntry>).GetAll();
+            var entries = (UnitOfWorkSingleton.Instance.RefenceRepository as IRepository<ReferenceEntry>).GetAll();
 
-            
+
             Entries.AddRange(entries);
 
             var onQueryChanged = this.WhenAnyValue(vm => vm.SearchQuery)
@@ -54,15 +54,15 @@ namespace CWRegexTester
             onQueryChanged.Connect();
             VisibleEntries = Entries.Connect()
                 .AutoRefreshOnObservable(_ => onQueryChanged)
-                 
+
 
                 .Filter(n => (n.Token ?? "").ToUpper().Contains(SearchQuery?.ToUpper() ?? "")
                 || (n.Info ?? "").ToUpper().Contains(SearchQuery?.ToUpper() ?? ""))
                 .AsObservableList();
         }
 
-        
-        public void AddEntry(ReferenceEntry entry)  
+
+        public void AddEntry(ReferenceEntry entry)
         {
             Entries.Add(entry);
         }

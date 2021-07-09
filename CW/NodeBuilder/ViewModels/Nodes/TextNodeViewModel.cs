@@ -1,28 +1,23 @@
 ﻿using DynamicData;
-using NodeBuilder.Views;
 using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
-using System;
-using System.Collections.Generic;
 using System.Reactive.Linq;
-using System.Text;
-using System.Windows;
 
 namespace NodeBuilder.ViewModels.Nodes
 {
 
-  
-    
 
-    
+
+
+
 
     class TextNodeViewModel : NodeViewModel
     {
         static TextNodeViewModel()
         {
-            
+
             Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<TextNodeViewModel>));
         }
 
@@ -36,10 +31,10 @@ namespace NodeBuilder.ViewModels.Nodes
         public TextNodeViewModel()
         {
             Name = "Text";
-            
+
 
             Input = new ValueNodeInputViewModel<string>();
-      
+
             Inputs.Add(Input);
 
 
@@ -47,13 +42,13 @@ namespace NodeBuilder.ViewModels.Nodes
 
             Output = new ValueNodeOutputViewModel<string>
             {
-                
+
                 Editor = ValueEditor,
 
                 Value = this.WhenAnyValue(vm => vm.Input.Value, vm => vm.ValueEditor.Value.Text, vm => vm.ValueEditor.Value.EscapeSpecial)
               .Select(_ => Input.Value + ValueEditor?.Value?.GetValue())
             };
-        
+
 
 
 

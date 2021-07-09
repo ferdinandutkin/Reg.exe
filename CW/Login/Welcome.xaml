@@ -18,17 +18,17 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Foreground="{StaticResource OffWhiteBrush}"
                    HorizontalAlignment="Center"
-                   x:Name="welcomeMessage"
+                   x:Name="WelcomeMessage"
                                    FontSize="30" 
                                     />
         <TextBlock Grid.Row="1" Foreground="{StaticResource OffWhiteBrush}"
                    HorizontalAlignment="Center"
-                   x:Name="userName"
+                   x:Name="UserName"
                                    FontSize="30" 
                                     />
         <Button Grid.Row="2" Content="Выйти"
                         Style="{StaticResource BaseButton}"
-                        x:Name="logOut"
+                        x:Name="LogOut"
                         HorizontalAlignment="Center"/>
     </Grid>
 </rxui:ReactiveUserControl>

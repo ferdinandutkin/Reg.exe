@@ -28,12 +28,12 @@
                            Text="Ваш результат: "/>
                 <TextBlock Foreground="{StaticResource SlateBrush}" 
                            FontSize="26"
-                           x:Name="score" />
+                           x:Name="Score" />
             </StackPanel>
             
         </Grid>
        
-        <ListBox Grid.Row="1" Background="Transparent" Foreground="White" x:Name="results"/>
+        <ListBox Grid.Row="1" Background="Transparent" Foreground="White" x:Name="Results"/>
        
 
     </Grid>

@@ -1,15 +1,12 @@
 ﻿using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 
-using System.Collections.Generic;
-using System.Text;
-
 namespace NodeBuilder.Models
 {
 
     public enum RepetitionsType
     {
-       One, Number, Range, ZeroOrOne, ZeroOrMore, OneOrMore
+        One, Number, Range, ZeroOrOne, ZeroOrMore, OneOrMore
     }
 
     public enum SearchType
@@ -88,6 +85,6 @@ namespace NodeBuilder.Models
             get;
             set;
         } = new Range();
-      
+
     }
 }

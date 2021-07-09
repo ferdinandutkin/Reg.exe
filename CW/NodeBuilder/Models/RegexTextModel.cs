@@ -1,8 +1,5 @@
 ﻿using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace NodeBuilder.Models
@@ -13,9 +10,9 @@ namespace NodeBuilder.Models
     {
         [Reactive]
         public int Start
-        { 
-            get; 
-            set; 
+        {
+            get;
+            set;
         }
 
         [Reactive]
@@ -26,7 +23,7 @@ namespace NodeBuilder.Models
         }
     }
 
-   
+
 
     public class RegexTextModel : ReactiveObject
     {

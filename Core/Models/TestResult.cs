@@ -2,7 +2,6 @@
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -11,7 +10,7 @@ namespace Core.Models
 {
 
 
-   
+
 
 
     public class TestResult : ReactiveObject, INotifiableEntity
@@ -46,15 +45,15 @@ namespace Core.Models
             get;
             set;
         }
-         
 
-        
 
-       
+
+
+
         public AnswerResult this[int index]
-        { 
+        {
             get => Results[index];
-            set => Results[index] = value; 
+            set => Results[index] = value;
         }
         public TestResult()
         {
@@ -65,8 +64,8 @@ namespace Core.Models
             Results = new(answers.Select(answer => new AnswerResult() { Answer = answer, Result = verifier.IsValid(answer) }));
             Score = Results.Where(res => res.Result).Sum(res => res.Answer.Question.Difficulty);
         }
-            
-      
+
+
         public void Insert(int index, AnswerResult item) => Results.Insert(index, item);
 
         public void RemoveAt(int index) => Results.RemoveAt(index);
@@ -75,8 +74,8 @@ namespace Core.Models
 
         public void Clear() => Results.Clear();
 
-       
 
-       
+
+
     }
 }

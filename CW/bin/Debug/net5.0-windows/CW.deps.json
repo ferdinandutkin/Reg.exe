@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "CW/1.0.0": {
         "dependencies": {
-          "ConsoleClient": "1.0.0",
+          "BasicClient": "1.0.0",
           "Core": "1.0.0",
           "Extended.Wpf.Toolkit": "3.6.0",
           "Fody": "6.5.1",
@@ -2087,13 +2087,13 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
-      "ConsoleClient/1.0.0": {
+      "BasicClient/1.0.0": {
         "dependencies": {
           "CWWebApi": "1.0.0",
           "Core": "1.0.0"
         },
         "runtime": {
-          "ConsoleClient.dll": {}
+          "BasicClient.dll": {}
         }
       },
       "Core/1.0.0": {
@@ -3475,7 +3475,7 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
-    "ConsoleClient/1.0.0": {
+    "BasicClient/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

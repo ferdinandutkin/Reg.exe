@@ -12,7 +12,7 @@ namespace CW.Views
 
 
 
-  
+
 
         public QuestionCreationControl()
         {
@@ -20,24 +20,24 @@ namespace CW.Views
 
             this.WhenActivated(d =>
             {
-              //  this.BindCommand(ViewModel, vm => vm.OpenDialogCommand, v => v.addTestCase).DisposeWith(d);
+                //  this.BindCommand(ViewModel, vm => vm.OpenDialogCommand, v => v.addTestCase).DisposeWith(d);
 
 
-                this.Bind(ViewModel, vm => vm.Model.Text, v => v.questionText.Text).DisposeWith(d);
-                this.Bind(ViewModel, vm => vm.Model.Difficulty, v => v.difficulty.Text).DisposeWith(d);
+                this.Bind(ViewModel, vm => vm.Model.Text, v => v.QuestionText.Text).DisposeWith(d);
+                this.Bind(ViewModel, vm => vm.Model.Difficulty, v => v.Difficulty.Text).DisposeWith(d);
 
-             
+
 
                 //     this.Bind(ViewModel, vm => vm.InputQuestionViewModel.SelectedPosition, v => v.)
 
 
 
             });
-    
 
-              
+
+
         }
 
-     
+
     }
 }

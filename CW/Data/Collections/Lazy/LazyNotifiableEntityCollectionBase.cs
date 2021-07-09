@@ -2,15 +2,11 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CW.Data
 {
-    public abstract class LazyNotifiableEntityCollectionBase<T> : SynchronizedCollection<T>,  ILazySynchronizedCollection<T>
+    public abstract class LazyNotifiableEntityCollectionBase<T> : SynchronizedCollection<T>, ILazySynchronizedCollection<T>
 
          where T : class, INotifiableEntity, new()
 

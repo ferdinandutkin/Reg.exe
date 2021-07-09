@@ -3,7 +3,7 @@ using ReactiveUI.Fody.Helpers;
 
 namespace CW.ViewModels
 {
-    public  class QuestionViewModel 
+    public class QuestionViewModel
     {
         [Reactive]
         public InputQuestion Model

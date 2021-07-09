@@ -1,8 +1,6 @@
 ﻿using DynamicData;
 using ReactiveUI;
 using System;
-using System.ComponentModel;
-using System.Linq;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Windows;
@@ -20,7 +18,7 @@ namespace CWRegexTester
         #region Show/Hide properties
         public static readonly DependencyProperty ShowSearchProperty =
             DependencyProperty.Register(nameof(ShowSearch), typeof(bool), typeof(ReferenceControl), new PropertyMetadata(true));
-        
+
         public static readonly DependencyProperty ShowTitleProperty =
             DependencyProperty.Register(nameof(ShowTitle), typeof(bool), typeof(ReferenceControl), new PropertyMetadata(true));
 
@@ -30,7 +28,7 @@ namespace CWRegexTester
             set => SetValue(ShowSearchProperty, value);
         }
 
-   
+
         public bool ShowTitle
         {
             get => (bool)GetValue(ShowTitleProperty);
@@ -72,40 +70,39 @@ namespace CWRegexTester
         public ReferenceControl()
         {
             InitializeComponent();
-            
 
-           
+
+
             this.WhenActivated(d =>
             {
 
-               this.Bind(ViewModel, vm => vm.SearchQuery, v => v.searchBox.Text).DisposeWith(d);
+                this.Bind(ViewModel, vm => vm.SearchQuery, v => v.SearchBox.Text).DisposeWith(d);
 
                 this.WhenAnyValue(v => v.ViewModel.VisibleEntries).Switch().Bind(out var bindableList).Subscribe().DisposeWith(d);
                 CVS.Source = bindableList;
-                elementsList.ItemsSource = CVS.View;
+                ElementsList.ItemsSource = CVS.View;
 
                 this.WhenAnyObservable(v => v.ViewModel.VisibleEntries.CountChanged)
                     .Select(count => count == 0)
-                    .BindTo(this, v => v.emptyMessage.Visibility).DisposeWith(d);
+                    .BindTo(this, v => v.EmptyMessage.Visibility).DisposeWith(d);
 
-                this.OneWayBind(ViewModel, vm => vm.Title, v => v.titleLabel.Text).DisposeWith(d);
-                this.OneWayBind(ViewModel, vm => vm.EmptyLabel, v => v.emptyMessage.Text).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.Title, v => v.TitleLabel.Text).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.EmptyLabel, v => v.EmptyMessage.Text).DisposeWith(d);
 
-                this.WhenAnyValue(v => v.searchBox.IsFocused, v => v.searchBox.Text)
+                this.WhenAnyValue(v => v.SearchBox.IsFocused, v => v.SearchBox.Text)
                       .Select(t => !t.Item1 && string.IsNullOrWhiteSpace(t.Item2))
-                      .BindTo(this, v => v.emptySearchBoxMessage.Visibility)
+                      .BindTo(this, v => v.EmptySearchBoxMessage.Visibility)
                       .DisposeWith(d);
 
                 this.WhenAnyValue(v => v.ShowSearch)
-                    .BindTo(this, v => v.searchBoxGrid.Visibility).DisposeWith(d);
-          
+                    .BindTo(this, v => v.SearchBoxGrid.Visibility).DisposeWith(d);
+
                 this.WhenAnyValue(v => v.ShowTitle)
-                    .BindTo(this, v => v.titleLabel.Visibility).DisposeWith(d);
+                    .BindTo(this, v => v.TitleLabel.Visibility).DisposeWith(d);
             });
         }
 
-      
+
     }
 }
-       
- 
+

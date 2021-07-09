@@ -1,8 +1,8 @@
-﻿using NodeNetwork;
-using System.Windows;
-using Splat;
+﻿using Core.Models;
 using CW.Data;
-using Core.Models;
+using NodeNetwork;
+using Splat;
+using System.Windows;
 
 namespace CW
 {
@@ -35,7 +35,7 @@ namespace CW
 
             Locator.CurrentMutable.Register<IObjectManager<ReferenceEntry>>(
                 () => new ObjectManager<ReferenceEntry>(ServerInteractionSigleton.Instance.ReferenceEntryControllerCallsWrapper));
-               
+
 
             NNViewRegistrar.RegisterSplat();
         }

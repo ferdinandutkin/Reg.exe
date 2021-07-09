@@ -22,16 +22,16 @@
 
 
         <rxui:ViewModelViewHost  Grid.Column="0"   
-                x:Name="viewHost" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                x:Name="ViewHost" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
 
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" Margin="5">
             <Label Foreground="{StaticResource LightGreyBrush}" Content="Current value:" FontSize="16"/>
-            <Label Foreground="{StaticResource LightGreyBrush}" x:Name="valueLabel" FontSize="16"/>
+            <Label Foreground="{StaticResource LightGreyBrush}" x:Name="ValueLabel" FontSize="16"/>
         </StackPanel>
 
         <nodelist:NodeListView Style="{DynamicResource NodeListViewStyle1}" Grid.Column="2" 
                                Background="{StaticResource DarkGreyBrush}"
-                               x:Name="nodeList" HorizontalAlignment="Stretch"/>
+                               x:Name="NodeList" HorizontalAlignment="Stretch"/>
 
     </Grid>
 

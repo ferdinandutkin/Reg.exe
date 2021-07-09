@@ -1,15 +1,11 @@
 ﻿using Core.Models;
 using Splat;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CW.Data 
+namespace CW.Data
 {
     class ReferenceEntrySyncronizedCollection : ObservableCollection<ReferenceEntry>, ISynchronizedCollection<ReferenceEntry>
 
@@ -19,27 +15,27 @@ namespace CW.Data
 
 
         IObjectManager<ReferenceEntry> LoadingManager { get; set; }
-        
+
 
         public ReferenceEntrySyncronizedCollection()
         {
             LoadingManager = Locator.Current.GetService<IObjectManager<ReferenceEntry>>();
 
-            this.CollectionChanged += ReferenceEntrySynctonizedCollection_CollectionChanged;
+            CollectionChanged += ReferenceEntrySynctonizedCollection_CollectionChanged;
         }
 
         public ReferenceEntrySyncronizedCollection(IEnumerable<ReferenceEntry> entities) : this()
         {
-            this.CollectionChanged -= ReferenceEntrySynctonizedCollection_CollectionChanged;
+            CollectionChanged -= ReferenceEntrySynctonizedCollection_CollectionChanged;
             foreach (ReferenceEntry entity in entities)
             {
 
                 Add(entity);
-                entity.PropertyChanged += Entity_PropertyChanged; 
-                
+                entity.PropertyChanged += Entity_PropertyChanged;
+
 
             }
-            this.CollectionChanged += ReferenceEntrySynctonizedCollection_CollectionChanged;
+            CollectionChanged += ReferenceEntrySynctonizedCollection_CollectionChanged;
 
         }
 
@@ -50,7 +46,7 @@ namespace CW.Data
                 var newValue = typeof(ReferenceEntry).GetProperty(e.PropertyName).GetValue(sender);
                 LoadingManager.Update((sender as ReferenceEntry).Id, e.PropertyName, newValue);
 
-               
+
             }
         }
 
@@ -65,7 +61,7 @@ namespace CW.Data
 
                         item.Id = LoadingManager.Add(item);
                         item.PropertyChanged += Entity_PropertyChanged;
-                       
+
                     }
                 }
 
@@ -81,7 +77,7 @@ namespace CW.Data
         }
 
 
-      
+
 
     }
 }

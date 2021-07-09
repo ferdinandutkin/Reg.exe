@@ -67,7 +67,7 @@ namespace ConsoleClient
 
                         var res = JsonSerializer.Deserialize(read, propType, options);
 
-                        result = propType.GetProperty(nameof(Property<object>.Value)).GetValue(res);
+                        result = propType.GetProperty(nameof(Property<object>.Value))?.GetValue(res);
 
 
 

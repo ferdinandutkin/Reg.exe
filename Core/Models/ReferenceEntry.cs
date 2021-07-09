@@ -5,7 +5,7 @@ using ReactiveUI.Fody.Helpers;
 namespace Core.Models
 {
 
-    public enum Category 
+    public enum Category
     {
         CharacterClasses,
         Anchors,

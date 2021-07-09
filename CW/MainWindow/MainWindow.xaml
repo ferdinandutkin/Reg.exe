@@ -24,7 +24,7 @@
 
     <Grid Background="#FF303030">
 
-        <cwregextester:NavigationControl x:Name="nav" ViewModel="{Binding NavigationControlViewModel}"/>
+        <cwregextester:NavigationControl x:Name="Nav" ViewModel="{Binding NavigationControlViewModel}"/>
          
 
   

@@ -13,10 +13,10 @@
                      Background="{StaticResource  MiddleGreyBrush}" >
 
 	<StackPanel>
-        <views:QuestionCreationControl x:Name="qqc"/>
-        <StackPanel Orientation="Horizontal" x:Name="buttons" Visibility="Collapsed">
-			<Button x:Name="okButton" Content="Ok" Click="okCancelButton_Click" Width="75"  />
-            <Button x:Name="cancelButton" Click="okCancelButton_Click" Content="Cancel"    Width="75"/>
+        <views:QuestionCreationControl x:Name="Qqc"/>
+        <StackPanel Orientation="Horizontal" x:Name="Buttons" Visibility="Collapsed">
+			<Button x:Name="OkButton" Content="Ok" Click="okCancelButton_Click" Width="75"  />
+            <Button x:Name="CancelButton" Click="okCancelButton_Click" Content="Cancel"    Width="75"/>
 		</StackPanel>
 	</StackPanel>
 

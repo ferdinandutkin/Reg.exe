@@ -12,6 +12,6 @@ namespace NodeBuilder.Views
         public string Description { get; set; }
 
         public override string ToString() => Description;
-        
+
     }
 }

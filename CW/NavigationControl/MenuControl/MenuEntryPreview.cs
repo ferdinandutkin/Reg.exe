@@ -12,7 +12,7 @@ namespace CWRegexTester
             Splat.Locator.CurrentMutable.Register(() => new MenuEntryPreviewView(), typeof(IViewFor<MenuEntryPreview>));
         }
 
-        [Reactive] 
+        [Reactive]
         public UserRoles MinRoleRequirment { get; set; }
 
         [Reactive]

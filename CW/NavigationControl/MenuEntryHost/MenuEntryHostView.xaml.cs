@@ -1,20 +1,10 @@
-﻿using System;
-using System.ComponentModel;
+﻿using ReactiveUI;
+using System;
 using System.Reactive.Disposables;
-using System.Reactive.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-
-using ReactiveUI;
 
 namespace CWRegexTester
 {
@@ -54,14 +44,14 @@ namespace CWRegexTester
             {
                 bool isDragging = false;
 
-                this.OneWayBind(ViewModel, vm => vm.PendingEntry.Template.PreviewInstance, v => v.pendingEntry.ViewModel).DisposeWith(d);
-                this.OneWayBind(ViewModel, vm => vm.PendingEntry, v => v.pendingEntry.Visibility,
+                this.OneWayBind(ViewModel, vm => vm.PendingEntry.Template.PreviewInstance, v => v.PendingEntry.ViewModel).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.PendingEntry, v => v.PendingEntry.Visibility,
                     entry => entry is null ? Visibility.Collapsed : Visibility.Visible)
                     .DisposeWith(d);
 
 
                 //я не знаю это все работает настолько рандомно что однажды я даже почитаю документацию (шутка)
-                this.OneWayBind(ViewModel, vm => vm.PendingEntry, v => v.entryHost.IsHitTestVisible,
+                this.OneWayBind(ViewModel, vm => vm.PendingEntry, v => v.EntryHost.IsHitTestVisible,
                   entry => entry?.Template?.PreviewInstance is null)
                   .DisposeWith(d);
 
@@ -70,8 +60,8 @@ namespace CWRegexTester
 
                 this.WhenAnyValue(v => v.ViewModel.PendingEntry.Position).Subscribe(pos =>
                 {
-                    Canvas.SetLeft(pendingEntry, pos.X);
-                    Canvas.SetTop(pendingEntry, pos.Y);
+                    Canvas.SetLeft(PendingEntry, pos.X);
+                    Canvas.SetTop(PendingEntry, pos.Y);
                 }).DisposeWith(d);
 
 
@@ -93,12 +83,12 @@ namespace CWRegexTester
 
                         isDragging = false;
 
-                        this.entryHost.ViewModel = entry.EntryFactory();
+                        EntryHost.ViewModel = entry.EntryFactory();
 
-                        this.ViewModel.PendingEntry = null;
+                        ViewModel.PendingEntry = null;
 
-            
-                        
+
+
 
 
                     }
@@ -118,15 +108,15 @@ namespace CWRegexTester
                         ViewModel.PendingEntry = new MenuEntryHostViewModel.DraggingTemplate()
                         {
                             Template = template,
-                            Position = e.GetPosition(contentContainer)
+                            Position = e.GetPosition(ContentContainer)
                         };
 
                         isDragging = true;
                         e.Effects = DragDropEffects.Copy;
 
                     }
-        
-                    
+
+
                     else
                     {
                         e.Handled = false;
@@ -146,8 +136,8 @@ namespace CWRegexTester
                     {
                         if (isDragging && ViewModel?.PendingEntry is not null)
                         {
-                            ViewModel.PendingEntry.Position = e.GetPosition(contentContainer);
-                           
+                            ViewModel.PendingEntry.Position = e.GetPosition(ContentContainer);
+
 
                         }
                         else
@@ -155,7 +145,7 @@ namespace CWRegexTester
                             ViewModel.PendingEntry = new MenuEntryHostViewModel.DraggingTemplate
                             {
                                 Template = template,
-                                Position = e.GetPosition(contentContainer)
+                                Position = e.GetPosition(ContentContainer)
                             };
                             e.Handled = false;
 
@@ -183,10 +173,10 @@ namespace CWRegexTester
                         e.Handled = false;
                         isDragging = false;
                         await Task.Delay(300);
-                        this.entryHost.ViewModel = template.EntryFactory();
+                        EntryHost.ViewModel = template.EntryFactory();
 
-                        this.ViewModel.PendingEntry = null;
-                      
+                        ViewModel.PendingEntry = null;
+
 
                     }
 
@@ -216,14 +206,14 @@ namespace CWRegexTester
                     {
 
                         //я не могу уже drop начал прилетать только при каком-то крайне специфичном поведении
-                        if (contentContainer.IsMouseOver && ViewModel?.PendingEntry?.Template?.EntryFactory is not null)
+                        if (ContentContainer.IsMouseOver && ViewModel?.PendingEntry?.Template?.EntryFactory is not null)
                         {
-                            this.entryHost.ViewModel = ViewModel.PendingEntry.Template.EntryFactory();
-                          
+                            EntryHost.ViewModel = ViewModel.PendingEntry.Template.EntryFactory();
+
                         }
-                      
+
                         ViewModel.PendingEntry = null;
-                        
+
                     }
 
                 }

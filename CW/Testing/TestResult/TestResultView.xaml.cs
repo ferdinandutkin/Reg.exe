@@ -16,12 +16,12 @@ namespace CW.Views
             this.WhenActivated(
                 d =>
                 {
-                    this.OneWayBind(ViewModel, vm => vm.Model, v => v.results.ItemsSource ,
+                    this.OneWayBind(ViewModel, vm => vm.Model, v => v.Results.ItemsSource,
                         results => results.Results.Select(results => new AnswerResultViewModel() { Model = results })).DisposeWith(d);
 
 
-                this.OneWayBind(ViewModel, vm => vm.Model.Score, v => v.score.Text).DisposeWith(d);
-                        
+                    this.OneWayBind(ViewModel, vm => vm.Model.Score, v => v.Score.Text).DisposeWith(d);
+
                 });
         }
     }

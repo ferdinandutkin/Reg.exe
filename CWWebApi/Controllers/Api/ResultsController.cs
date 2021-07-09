@@ -1,8 +1,8 @@
 ﻿using Core.Models;
-using Microsoft.AspNetCore.Mvc;
 using CWWebApi.Data;
-using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace CWWebApi.Controllers
 {
@@ -27,7 +27,7 @@ namespace CWWebApi.Controllers
 
 
 
-    
+
     }
 }
 

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CW", "..\CW\CW.csproj", "{E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CWWebApi", "..\CWWebApi\CWWebApi.csproj", "{4FE0CC08-89CE-4025-B40E-AAEFCB678638}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleClient", "..\ConsoleClient\ConsoleClient.csproj", "{B0033126-D6D8-4236-B722-8FCE4F5CBE54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicClient", "..\ConsoleClient\BasicClient.csproj", "{B0033126-D6D8-4236-B722-8FCE4F5CBE54}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "..\Core\Core.csproj", "{8A97E817-FAB7-4A36-9F90-A1B21C30E87C}"
 EndProject

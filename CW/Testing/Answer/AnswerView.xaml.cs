@@ -9,9 +9,9 @@ namespace CW.Views
     /// </summary>
     public partial class AnswerView : ReactiveUserControl<AnswerViewModel>
     {
-        
 
-        
+
+
         public AnswerView()
         {
             InitializeComponent();
@@ -19,13 +19,13 @@ namespace CW.Views
             this.WhenActivated(
                 d =>
                 {
-                    this.Bind(ViewModel, vm => vm.Model.Question, v => v.question.ViewModel,
+                    this.Bind(ViewModel, vm => vm.Model.Question, v => v.Question.ViewModel,
                         qm => new QuestionViewModel() { Model = qm },
                         qvm => qvm.Model).DisposeWith(d);
 
-                    
 
-                    this.Bind(ViewModel, vm => vm.Model.Input, v => v.answer.Text).DisposeWith(d);
+
+                    this.Bind(ViewModel, vm => vm.Model.Input, v => v.Answer.Text).DisposeWith(d);
                 }
                 );
 

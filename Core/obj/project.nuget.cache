@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "umj/kvhq4yzRc1xuFgDcKCK7HyQKxvAwIoKR79QqVEhb+71+GZBgjsTE7IpKj2oq+hLnvFv1o12qOo6vhnw+cw==",
+  "dgSpecHash": "p/zaLRZQeymsCRW5jZ7mQCxg5pI4btLGud5JCNHmJsURfDbTdSeBi6QBynJZml37jduKObySfvKbXi7OBkbofw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ja\\source\\repos\\oop_cw\\Core\\Core.csproj",
+  "projectFilePath": "C:\\Users\\ja\\Source\\Repos\\oop_cw\\Core\\Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ja\\.nuget\\packages\\dynamicdata\\7.1.16\\dynamicdata.7.1.16.nupkg.sha512",
     "C:\\Users\\ja\\.nuget\\packages\\fody\\6.5.1\\fody.6.5.1.nupkg.sha512",

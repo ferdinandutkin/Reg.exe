@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Models
 {
@@ -10,7 +6,7 @@ namespace Core.Models
     ///  я тут понял что вместо всего этого можно было создавать объекты анонимного типа
     ///  но поздно! придется использовать это
     /// </summary>
-     
+
     public class Property<T>
     {
         public T Value { get; set; }
@@ -44,7 +40,7 @@ namespace Core.Models
         public static Type MakeGenericTypeFromValue(object value)
            => MakeGenericType(value.GetType());
 
-        public static object GetValue(object property) 
+        public static object GetValue(object property)
             => property.GetType().GetProperty("Value").GetValue(property);
     }
 }

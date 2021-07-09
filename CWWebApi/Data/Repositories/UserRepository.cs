@@ -1,16 +1,12 @@
 ﻿using Core.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CWWebApi.Data
 {
     public class UserRepository : PropertyAccessEnumerableRepository<User>, IPropertyAccessEnumerableRepository<User>
     {
 
-        public UserRepository(DbContext context) :base(context)
+        public UserRepository(DbContext context) : base(context)
         {
 
         }
@@ -22,17 +18,18 @@ namespace CWWebApi.Data
 
             switch (property)
             {
-                case nameof(User.Results): {
-                        
+                case nameof(User.Results):
+                    {
+
                         var user = context.Find<User>(id);
                         context.Entry(user).Collection(e => e.Results).Load();
                         return user.Results;
                     }
                 default:
                     return entity?.GetType().GetProperty(property)?.GetValue(entity);
-                  
+
             }
-           
+
         }
 
     }

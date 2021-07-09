@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 namespace Core.Models
 {
 
-    public class InputQuestion  : ReactiveObject, INotifiableEntity
+    public class InputQuestion : ReactiveObject, INotifiableEntity
     {
         public int Id
         {

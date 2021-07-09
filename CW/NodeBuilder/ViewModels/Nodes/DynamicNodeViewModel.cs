@@ -1,10 +1,6 @@
-﻿using NodeNetwork.ViewModels;
-using ReactiveUI;
-using System;
-using System.Collections.Generic;
+﻿using ReactiveUI;
 using System.Linq;
 using System.Reactive;
-using System.Text;
 
 namespace NodeBuilder.ViewModels.Nodes
 {
@@ -46,12 +42,12 @@ namespace NodeBuilder.ViewModels.Nodes
         public ReactiveCommand<Unit, Unit> AddNewCommand { get; set; }
 
 
-    
+
 
         public DynamicNodeViewModel()
         {
-           
+
         }
-        
+
     }
 }

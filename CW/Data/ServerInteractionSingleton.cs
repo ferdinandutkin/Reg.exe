@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CW.Data
 {
@@ -10,7 +6,7 @@ namespace CW.Data
     {
         //https://localhost:5001/api/
         //https://regexe.azurewebsites.net/api/
-        private static readonly 
+        private static readonly
                 Lazy<ConsoleClient.ServerInteraction> lazy
                 = new(
                     () => new ConsoleClient.ServerInteraction("https://regexe.azurewebsites.net/api/"));

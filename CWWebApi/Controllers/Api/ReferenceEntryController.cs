@@ -1,6 +1,6 @@
 ﻿using Core.Models;
-using Microsoft.AspNetCore.Mvc;
 using CWWebApi.Data;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace CWWebApi.Controllers
@@ -9,8 +9,8 @@ namespace CWWebApi.Controllers
     [Route("api/[controller]")]
     public class ReferenceEntryController : BasicCRUDControllerWithPropertyAcess<ReferenceEntry>
     {
-       public ReferenceEntryController(IPropertyAccessEnumerableRepository<ReferenceEntry> repository, ILogger<ReferenceEntryController> logger) :
-            base(repository, logger)
+        public ReferenceEntryController(IPropertyAccessEnumerableRepository<ReferenceEntry> repository, ILogger<ReferenceEntryController> logger) :
+             base(repository, logger)
         {
 
         }

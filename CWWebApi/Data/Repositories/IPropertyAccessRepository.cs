@@ -1,8 +1,4 @@
 ﻿using Core.Classes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CWWebApi.Data
 {
@@ -15,7 +11,7 @@ namespace CWWebApi.Data
             return entity?.GetType().GetProperty(property)?.GetValue(entity);
         }
 
-    
+
 
         public void Update(int id, string property, object newValue)
         {
@@ -23,9 +19,9 @@ namespace CWWebApi.Data
 
             entity.GetType().GetProperty(property)?.SetValue(entity, newValue);
 
-            this.Update(entity);
+            Update(entity);
         }
-        
+
     }
 
     public interface IPropertyAccessEnumerableRepository<T> : IEnumerableRepository<T>, IPropertyAccessRepository<T> where T : class, IEntity

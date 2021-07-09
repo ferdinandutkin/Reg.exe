@@ -1,10 +1,9 @@
-﻿using System.Reactive.Disposables;
+﻿using NodeBuilder.Models;
+using NodeBuilder.ViewModels;
+using ReactiveUI;
+using System.Reactive.Disposables;
 using System.Windows;
 using System.Windows.Controls;
-using NodeBuilder.Models;
-using NodeBuilder.ViewModels;
-using NodeBuilder.ViewModels.Nodes;
-using ReactiveUI;
 
 namespace NodeBuilder.Views
 {
@@ -34,13 +33,13 @@ namespace NodeBuilder.Views
 
             this.WhenActivated(d =>
             {
-                this.OneWayBind(ViewModel, vm => vm.Value.AnchorType, v => v.anchorType.ItemsSource,
+                this.OneWayBind(ViewModel, vm => vm.Value.AnchorType, v => v.AnchorType.ItemsSource,
                     _ => new EnumDescriptions<AnchorType>()).DisposeWith(d);
-                this.Bind(ViewModel, vm => vm.Value.AnchorType, v => v.anchorType.SelectedValue).DisposeWith(d);
+                this.Bind(ViewModel, vm => vm.Value.AnchorType, v => v.AnchorType.SelectedValue).DisposeWith(d);
 
             });
 
-            anchorType.UpdateLayout();
+            AnchorType.UpdateLayout();
 
         }
     }

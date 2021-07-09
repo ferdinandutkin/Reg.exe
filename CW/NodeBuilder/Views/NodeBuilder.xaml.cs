@@ -1,8 +1,8 @@
-﻿using System.Reactive.Disposables;
+﻿using NodeBuilder.ViewModels;
+using ReactiveUI;
+using System.Reactive.Disposables;
 using System.Windows;
 using System.Windows.Controls;
-using NodeBuilder.ViewModels;
-using ReactiveUI;
 
 namespace NodeBuilder.Views
 {
@@ -29,13 +29,13 @@ namespace NodeBuilder.Views
         {
             InitializeComponent();
 
-            this.ViewModel = new NodeBuilderViewModel();
+            ViewModel = new NodeBuilderViewModel();
 
             this.WhenActivated(d =>
             {
-                this.OneWayBind(ViewModel, vm => vm.ListViewModel, v => v.nodeList.ViewModel).DisposeWith(d);
-                this.OneWayBind(ViewModel, vm => vm.NetworkViewModel, v => v.viewHost.ViewModel).DisposeWith(d);
-                this.OneWayBind(ViewModel, vm => vm.ValueLabel, v => v.valueLabel.Content).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.ListViewModel, v => v.NodeList.ViewModel).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.NetworkViewModel, v => v.ViewHost.ViewModel).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.ValueLabel, v => v.ValueLabel.Content).DisposeWith(d);
             });
         }
     }

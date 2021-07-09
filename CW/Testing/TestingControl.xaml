@@ -10,6 +10,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <rxui:ViewModelViewHost HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" x:Name="currentVMHost"/>
+        <rxui:ViewModelViewHost HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" x:Name="CurrentVmHost"/>
     </Grid>
 </rxui:ReactiveUserControl>

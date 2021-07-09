@@ -1,9 +1,6 @@
 ﻿using NodeBuilder.ViewModels.Nodes;
 using NodeNetwork.Views;
 using ReactiveUI;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -19,7 +16,7 @@ namespace NodeBuilder.Views
         DynamicNodeViewModel IViewFor<DynamicNodeViewModel>.ViewModel
         {
             get => ViewModel as DynamicNodeViewModel;
-            set => ViewModel = value; 
+            set => ViewModel = value;
         }
 
         public DynamicNodeView()

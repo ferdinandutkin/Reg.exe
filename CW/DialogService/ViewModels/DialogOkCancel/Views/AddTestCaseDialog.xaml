@@ -13,17 +13,17 @@
 						 d:DesignWidth="800">
 
     <StackPanel >
-		<views:AddTestCase x:Name="addTestCase"/>
+		<views:AddTestCase x:Name="AddTestCase"/>
         <StackPanel Orientation="Horizontal" 
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Margin="70 0 20 20">
             <Button Style="{StaticResource BaseButton}" 
-                    x:Name="okButton" 
+                    x:Name="OkButton" 
                     Content="Ок" 
                     Click="OkCancelButton_Click"/>
             <Button Style="{StaticResource BaseButton}" 
-                    x:Name="cancelButton" 
+                    x:Name="CancelButton" 
                     Click="OkCancelButton_Click" 
                     Content="Отмена"/>
 		</StackPanel>

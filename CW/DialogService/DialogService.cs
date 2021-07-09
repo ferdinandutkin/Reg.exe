@@ -35,6 +35,7 @@ namespace CW.Dialog
 
             var instance = Splat.Locator.Current.GetService(typeof(IDialogService<T>)) as IDialogService<T>;
 
+            
             if (owner is not null)
             {
                 instance.Owner = owner;

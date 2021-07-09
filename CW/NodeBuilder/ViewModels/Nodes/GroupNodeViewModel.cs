@@ -1,11 +1,9 @@
-﻿using System.Linq;
-using System.Reactive.Linq;
-using DynamicData;
+﻿using DynamicData;
 using NodeBuilder.Views;
 using NodeNetwork.Toolkit.ValueNode;
-using NodeNetwork.ViewModels;
-using NodeNetwork.Views;
 using ReactiveUI;
+using System.Linq;
+using System.Reactive.Linq;
 
 namespace NodeBuilder.ViewModels.Nodes
 {
@@ -59,8 +57,8 @@ namespace NodeBuilder.ViewModels.Nodes
 
             var output = Inputs.Connect().
                 WhenValueChanged(item => ((ValueNodeInputViewModel<string>)item).Value).
-                Select(_ => 
-                string.Concat('(', 
+                Select(_ =>
+                string.Concat('(',
                 string.Concat(Inputs
              .Items
              .OfType<ValueNodeInputViewModel<string>>()
@@ -75,7 +73,7 @@ namespace NodeBuilder.ViewModels.Nodes
             {
                 Name = "(AB)",
                 Value = output
-        };
+            };
             Outputs.Add(Output);
         }
     }

@@ -1,8 +1,5 @@
-﻿using CW.Data;
-using ReactiveUI;
-using System.ComponentModel;
+﻿using ReactiveUI;
 using System.Reactive.Disposables;
-using System.Reactive.Linq;
 
 namespace CWRegexTester
 {
@@ -21,7 +18,7 @@ namespace CWRegexTester
             this.WhenActivated(
                 d =>
                 {
-                    this.OneWayBind(ViewModel, vm => vm.Title, v => v.title.Text).DisposeWith(d);
+                    this.OneWayBind(ViewModel, vm => vm.Title, v => v.Title.Text).DisposeWith(d);
                 }
                 );
 

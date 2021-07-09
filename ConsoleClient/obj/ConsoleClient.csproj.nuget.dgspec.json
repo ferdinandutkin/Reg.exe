@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ja\\source\\repos\\oop_cw\\ConsoleClient\\ConsoleClient.csproj": {}
+    "C:\\Users\\ja\\Source\\Repos\\oop_cw\\ConsoleClient\\ConsoleClient.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ja\\source\\repos\\oop_cw\\ConsoleClient\\ConsoleClient.csproj": {
+    "C:\\Users\\ja\\Source\\Repos\\oop_cw\\ConsoleClient\\ConsoleClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ja\\source\\repos\\oop_cw\\ConsoleClient\\ConsoleClient.csproj",
+        "projectUniqueName": "C:\\Users\\ja\\Source\\Repos\\oop_cw\\ConsoleClient\\ConsoleClient.csproj",
         "projectName": "ConsoleClient",
-        "projectPath": "C:\\Users\\ja\\source\\repos\\oop_cw\\ConsoleClient\\ConsoleClient.csproj",
+        "projectPath": "C:\\Users\\ja\\Source\\Repos\\oop_cw\\ConsoleClient\\ConsoleClient.csproj",
         "packagesPath": "C:\\Users\\ja\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ja\\source\\repos\\oop_cw\\ConsoleClient\\obj\\",
+        "outputPath": "C:\\Users\\ja\\Source\\Repos\\oop_cw\\ConsoleClient\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,11 +32,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\ja\\source\\repos\\oop_cw\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\ja\\source\\repos\\oop_cw\\Core\\Core.csproj"
+              "C:\\Users\\ja\\Source\\Repos\\oop_cw\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\ja\\Source\\Repos\\oop_cw\\Core\\Core.csproj"
               },
-              "C:\\Users\\ja\\source\\repos\\oop_cw\\CWWebApi\\CWWebApi.csproj": {
-                "projectPath": "C:\\Users\\ja\\source\\repos\\oop_cw\\CWWebApi\\CWWebApi.csproj"
+              "C:\\Users\\ja\\Source\\Repos\\oop_cw\\CWWebApi\\CWWebApi.csproj": {
+                "projectPath": "C:\\Users\\ja\\Source\\Repos\\oop_cw\\CWWebApi\\CWWebApi.csproj"
               }
             }
           }
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\ja\\source\\repos\\oop_cw\\Core\\Core.csproj": {
+    "C:\\Users\\ja\\Source\\Repos\\oop_cw\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ja\\source\\repos\\oop_cw\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\ja\\Source\\Repos\\oop_cw\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\ja\\source\\repos\\oop_cw\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\ja\\Source\\Repos\\oop_cw\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\ja\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ja\\source\\repos\\oop_cw\\Core\\obj\\",
+        "outputPath": "C:\\Users\\ja\\Source\\Repos\\oop_cw\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -143,14 +143,14 @@
         }
       }
     },
-    "C:\\Users\\ja\\source\\repos\\oop_cw\\CWWebApi\\CWWebApi.csproj": {
+    "C:\\Users\\ja\\Source\\Repos\\oop_cw\\CWWebApi\\CWWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ja\\source\\repos\\oop_cw\\CWWebApi\\CWWebApi.csproj",
+        "projectUniqueName": "C:\\Users\\ja\\Source\\Repos\\oop_cw\\CWWebApi\\CWWebApi.csproj",
         "projectName": "CWWebApi",
-        "projectPath": "C:\\Users\\ja\\source\\repos\\oop_cw\\CWWebApi\\CWWebApi.csproj",
+        "projectPath": "C:\\Users\\ja\\Source\\Repos\\oop_cw\\CWWebApi\\CWWebApi.csproj",
         "packagesPath": "C:\\Users\\ja\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ja\\source\\repos\\oop_cw\\CWWebApi\\obj\\",
+        "outputPath": "C:\\Users\\ja\\Source\\Repos\\oop_cw\\CWWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -171,8 +171,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\ja\\source\\repos\\oop_cw\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\ja\\source\\repos\\oop_cw\\Core\\Core.csproj"
+              "C:\\Users\\ja\\Source\\Repos\\oop_cw\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\ja\\Source\\Repos\\oop_cw\\Core\\Core.csproj"
               }
             }
           }

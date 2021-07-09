@@ -14,8 +14,8 @@
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <TextBlock x:Name="titleLabel" Text="Тестирование регулярных выражений" Style="{StaticResource PageTitle}"/>
+            <TextBlock x:Name="TitleLabel" Text="Тестирование регулярных выражений" Style="{StaticResource PageTitle}"/>
         </Grid>
-        <rxui:ViewModelViewHost Grid.Row="1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" x:Name="currentVMHost"/>
+        <rxui:ViewModelViewHost Grid.Row="1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" x:Name="CurrentVmHost"/>
 	</Grid>
 </rxui:ReactiveUserControl>

@@ -7,14 +7,14 @@ namespace CW.ViewModels
 {
     public class AnswerResultViewModel : ReactiveObject
     {
-       static AnswerResultViewModel()
-       {
+        static AnswerResultViewModel()
+        {
             Splat.Locator.CurrentMutable.Register(() => new AnswerResultView(), typeof(IViewFor<AnswerResultViewModel>));
-       }
-       [Reactive]
-       public AnswerResult Model
-       {
+        }
+        [Reactive]
+        public AnswerResult Model
+        {
             get; set;
-       }
+        }
     }
 }

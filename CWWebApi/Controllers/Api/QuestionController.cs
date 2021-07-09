@@ -1,12 +1,8 @@
 ﻿using Core.Models;
-using Microsoft.AspNetCore.Mvc;
 using CWWebApi.Data;
-using Microsoft.Extensions.Logging;
-using System.Linq;
-using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
-using System.Text.Json.Serialization;
-using System.Text.Json;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace CWWebApi.Controllers
 {
@@ -14,11 +10,11 @@ namespace CWWebApi.Controllers
     [Route("api/[controller]")]
     public class QuestionController : BasicCRUDControllerWithPropertyAcess<InputQuestion>
     {
-       
-       public QuestionController(IPropertyAccessEnumerableRepository<InputQuestion> repository, ILogger<QuestionController> logger) :
-            base(repository, logger)
+
+        public QuestionController(IPropertyAccessEnumerableRepository<InputQuestion> repository, ILogger<QuestionController> logger) :
+             base(repository, logger)
         {
-            
+
         }
 
 

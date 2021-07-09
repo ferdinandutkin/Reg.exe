@@ -25,13 +25,13 @@
                 <!--<ColumnDefinition Width="4*"/>-->
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock x:Name="titleLabel" Text="Редактирование справочной информации" Style="{StaticResource PageTitle}"/>
+            <TextBlock x:Name="TitleLabel" Text="Редактирование справочной информации" Style="{StaticResource PageTitle}"/>
             <!--<Button Template="{DynamicResource ButtonTemplate}" Grid.Column="1" x:Name="newTest" Content ="Новый тест" Style="{StaticResource StretchButtonStyle}"/>-->
 
         </Grid>
 
 
-        <DataGrid  Grid.Row ="1" x:Name="grid" IsReadOnly="False"
+        <DataGrid  Grid.Row ="1" x:Name="Grid" IsReadOnly="False"
                    Style="{StaticResource DataGrid}" ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" RowStyle="{StaticResource DataGridRowStyle}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Токен" Width="*" Binding="{Binding Token}"/>

@@ -11,7 +11,7 @@ namespace CWWebApi.Models
     public class ApiUser : IEntity
     {
         public User User { get; set; }
-      
+
 
         [JsonIgnore]
         public string Password { get; set; }

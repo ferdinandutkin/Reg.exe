@@ -19,7 +19,7 @@ namespace Core.Models
             get; set;
         } = string.Empty;
 
-      
+
         [Reactive]
         public ObservableCollection<Position> Positions { get; set; } = new();
 

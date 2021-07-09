@@ -1,8 +1,7 @@
-﻿using System.Windows;
-using System.Windows.Controls;
-using NodeBuilder.ViewModels;
-using NodeBuilder.ViewModels.Nodes;
+﻿using NodeBuilder.ViewModels;
 using ReactiveUI;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace NodeBuilder.Views
 {
@@ -24,13 +23,13 @@ namespace NodeBuilder.Views
             set => ViewModel = (StringValueEditorViewModel)value;
         }
         #endregion
-        
+
         public TextValueEditorView()
         {
             InitializeComponent();
 
             this.WhenActivated(d => d(
-                this.Bind(ViewModel, vm => vm.Value, v => v.valueTextBox.Text)
+                this.Bind(ViewModel, vm => vm.Value, v => v.ValueTextBox.Text)
             ));
         }
     }

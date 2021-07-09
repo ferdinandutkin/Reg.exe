@@ -3,15 +3,8 @@ using CW.Data;
 using CW.Dialog;
 using CW.Dialog.ViewModels;
 using CW.Views;
-using DynamicData;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace CW.ViewModels
@@ -26,12 +19,12 @@ namespace CW.ViewModels
 
 
         [Reactive]
-        public ISynchronizedCollection <InputQuestion> Model { get; set; }
+        public ISynchronizedCollection<InputQuestion> Model { get; set; }
 
-     
- 
 
- 
+
+
+
         public ICommand OpenQuestionWindow =>
             ReactiveCommand.Create<object>(OnOpenDialog);
 
@@ -40,16 +33,16 @@ namespace CW.ViewModels
         {
             bool isNew = false;
             InputQuestion toEdit;
-            if  (param is InputQuestion inputQuestion)
+            if (param is InputQuestion inputQuestion)
             {
                 toEdit = inputQuestion;
-               
+
             }
             else
             {
                 isNew = true;
                 toEdit = new InputQuestion();
-              
+
             }
 
 
@@ -59,14 +52,14 @@ namespace CW.ViewModels
             var vm = new QuestionDialogViewModel()
             {
                 IsNew = isNew,
-                QuestionCreationControlViewModel = new QuestionCreationControlViewModel 
+                QuestionCreationControlViewModel = new QuestionCreationControlViewModel
                 {
 
                     Model = toEdit
-                } 
+                }
             };
             var result = DialogService.OpenDialog(vm);
- 
+
             if (result == DialogResult.Ok && isNew)
             {
                 Model.Add(toEdit);
@@ -80,10 +73,10 @@ namespace CW.ViewModels
 
 
 
-            this.Model = UnitOfWorkSingleton.Instance.QuestionsRepository.GetAllWithPropertiesIncluded();
-            
-           
-                
+            Model = UnitOfWorkSingleton.Instance.QuestionsRepository.GetAllWithPropertiesIncluded();
+
+
+
         }
     }
 }

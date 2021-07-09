@@ -7,7 +7,7 @@ using ReactiveUI.Fody.Helpers;
 namespace CW.ViewModels
 {
     public class RegexTesterViewModel : ReactiveObject
-    { 
+    {
 
         static RegexTesterViewModel()
         {
@@ -21,16 +21,16 @@ namespace CW.ViewModels
             get; set;
         }
 
- 
-     
+
+
 
         public RegexTesterViewModel()
         {
 
-             
+
 
         }
 
-        
+
     }
 }

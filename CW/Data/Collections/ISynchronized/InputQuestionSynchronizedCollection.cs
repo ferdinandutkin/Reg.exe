@@ -1,15 +1,11 @@
 ﻿using Core.Models;
 using Splat;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CW.Data 
+namespace CW.Data
 {
     class InputQuestionSynchronizedCollection : ObservableCollection<InputQuestion>, ISynchronizedCollection<InputQuestion>
 
@@ -19,21 +15,21 @@ namespace CW.Data
 
 
         IObjectManager<InputQuestion> LoadingManager { get; set; }
-        IObjectManager<TestCase> TestCaseManager = Locator.Current.GetService<IObjectManager<TestCase>>();
+        readonly IObjectManager<TestCase> TestCaseManager = Locator.Current.GetService<IObjectManager<TestCase>>();
 
 
-        IObjectManager<Position> PositionsManager = Locator.Current.GetService<IObjectManager<Position>>();
+        readonly IObjectManager<Position> PositionsManager = Locator.Current.GetService<IObjectManager<Position>>();
 
         public InputQuestionSynchronizedCollection()
         {
             LoadingManager = Locator.Current.GetService<IObjectManager<InputQuestion>>();
 
-            this.CollectionChanged += InputQuestionSynctonizedCollection_CollectionChanged;
+            CollectionChanged += InputQuestionSynctonizedCollection_CollectionChanged;
         }
 
         public InputQuestionSynchronizedCollection(IEnumerable<InputQuestion> entities) : this()
         {
-            this.CollectionChanged -= InputQuestionSynctonizedCollection_CollectionChanged;
+            CollectionChanged -= InputQuestionSynctonizedCollection_CollectionChanged;
             foreach (InputQuestion entity in entities)
             {
 
@@ -42,7 +38,7 @@ namespace CW.Data
                 SubscribeToTestcasePropertiesChanged(entity);
 
             }
-            this.CollectionChanged += InputQuestionSynctonizedCollection_CollectionChanged;
+            CollectionChanged += InputQuestionSynctonizedCollection_CollectionChanged;
 
         }
 
@@ -53,7 +49,7 @@ namespace CW.Data
                 var newValue = typeof(InputQuestion).GetProperty(e.PropertyName).GetValue(sender);
                 LoadingManager.Update((sender as InputQuestion).Id, e.PropertyName, newValue);
 
-               
+
             }
         }
 
@@ -84,7 +80,7 @@ namespace CW.Data
         }
 
 
-        void SubscribeToPositions( TestCase testCase)
+        void SubscribeToPositions(TestCase testCase)
         {
             if (ISSynchronizationEnabled)
             {
@@ -122,10 +118,10 @@ namespace CW.Data
                 TestCaseManager.Update(testCase.Id, nameof(TestCase.Positions), testCase.Positions);
 
 
-          
+
 
                 testCase.Positions.ClearEventInvocations(nameof(CollectionChanged));
-                testCase.Positions =  TestCaseManager.Get(testCase.Id, nameof(TestCase.Positions)) as ObservableCollection<Position>;
+                testCase.Positions = TestCaseManager.Get(testCase.Id, nameof(TestCase.Positions)) as ObservableCollection<Position>;
 
                 testCase.Positions.CollectionChanged += (sender, args) => Positions_CollectionChanged(testCase, args);
                 testCase.PropertyChanged += TestCase_PropertyChanged;
@@ -139,7 +135,7 @@ namespace CW.Data
             }
         }
 
-     
+
         private void Position_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             if (ISSynchronizationEnabled)
@@ -224,12 +220,12 @@ namespace CW.Data
         {
             if (ISSynchronizationEnabled)
             {
-             
-                
-                
+
+
+
                 var newValue = typeof(TestCase).GetProperty(e.PropertyName).GetValue(sender);
                 TestCaseManager.Update((sender as TestCase).Id, e.PropertyName, newValue);
-  
+
             }
         }
 

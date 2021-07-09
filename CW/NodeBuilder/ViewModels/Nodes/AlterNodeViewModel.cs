@@ -1,20 +1,16 @@
 ﻿
-using System.Linq;
-using System.Reactive.Linq;
-using System.Text;
-using System.Windows;
 using DynamicData;
 using NodeBuilder.Views;
 using NodeNetwork.Toolkit.ValueNode;
-using NodeNetwork.ViewModels;
-using NodeNetwork.Views;
 using ReactiveUI;
+using System.Linq;
+using System.Reactive.Linq;
 
 namespace NodeBuilder.ViewModels.Nodes
 {
 
 
-  
+
     public class AlterNodeViewModel : DynamicNodeViewModel
     {
         static AlterNodeViewModel()
@@ -27,7 +23,7 @@ namespace NodeBuilder.ViewModels.Nodes
         public ValueNodeOutputViewModel<string> Output { get; }
 
         readonly NameGen Gen = new NameGen();
-        
+
 
 
 
@@ -39,18 +35,18 @@ namespace NodeBuilder.ViewModels.Nodes
             {
                 Name = Gen.NextName,
                 Editor = new StringValueEditorViewModel(),
-                 
-                
+
+
             });
         }
 
-       
- 
+
+
         public AlterNodeViewModel()
         {
 
 
-          
+
 
 
 
@@ -72,7 +68,7 @@ namespace NodeBuilder.ViewModels.Nodes
             Inputs.Add(Input2);
 
 
-           
+
 
 
             var output = Inputs.Connect().
@@ -84,11 +80,11 @@ namespace NodeBuilder.ViewModels.Nodes
              .Where(value => value != null && value.ToString().Trim() != string.Empty)));
 
 
-       
-       
 
 
-          
+
+
+
             Output = new ValueNodeOutputViewModel<string>
             {
                 Name = "A|B",
@@ -97,9 +93,9 @@ namespace NodeBuilder.ViewModels.Nodes
 
             };
             Outputs.Add(Output);
- 
 
-          
+
+
 
         }
     }

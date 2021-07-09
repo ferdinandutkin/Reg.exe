@@ -7,10 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="90" d:DesignWidth="200">
     <StackPanel Orientation="Vertical" >
-        <TextBox  x:Name="valueTextBox" Margin="10,0,0,0"/>
+        <TextBox  x:Name="ValueTextBox" Margin="10,0,0,0"/>
         <StackPanel Orientation="Horizontal" Margin="10,10,0,0" HorizontalAlignment="Right" >
             <TextBlock Text="Escape special" Margin="0,0,10,0" />
-            <CheckBox  x:Name="escapeSpecial"/>
+            <CheckBox  x:Name="EscapeSpecial"/>
         </StackPanel>
            
     </StackPanel>

@@ -1,27 +1,21 @@
 ﻿using DynamicData;
-using NodeBuilder.Views;
 using NodeNetwork.Toolkit.ValueNode;
-using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
-using System;
-using System.Collections.Generic;
 using System.Reactive.Linq;
- 
-using System.Windows;
 
 namespace NodeBuilder.ViewModels.Nodes
 {
 
-  
-    
 
-    
+
+
+
     class AnchorNodeViewModel : RegexElementNodeViewModel
     {
         static AnchorNodeViewModel()
         {
-            
+
             Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<AnchorNodeViewModel>));
         }
 
@@ -35,10 +29,10 @@ namespace NodeBuilder.ViewModels.Nodes
         public AnchorNodeViewModel()
         {
             Name = "Anchor";
-            
+
 
             Input = new ValueNodeInputViewModel<string>();
-      
+
             Inputs.Add(Input);
 
 

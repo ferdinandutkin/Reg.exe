@@ -15,11 +15,11 @@ namespace CW.Views
 
             this.WhenActivated(d =>
             {
-                this.OneWayBind(ViewModel, vm => vm.Model.Answer.Question.Name, v => v.questionName.Text).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.Model.Answer.Question.Name, v => v.QuestionName.Text).DisposeWith(d);
 
-                this.OneWayBind(ViewModel, vm => vm.Model.Answer.Question.Difficulty, v => v.score.Text).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.Model.Answer.Question.Difficulty, v => v.Score.Text).DisposeWith(d);
 
-                this.OneWayBind(ViewModel, vm => vm.Model.Result, v => v.isCorrect.IsChecked).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.Model.Result, v => v.IsCorrect.IsChecked).DisposeWith(d);
             }
             );
         }

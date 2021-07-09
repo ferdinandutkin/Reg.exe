@@ -1,10 +1,6 @@
 ﻿using Core.Models;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
-using System;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text.RegularExpressions;
 using System.Windows.Input;
 
 namespace CW.ViewModels
@@ -24,7 +20,7 @@ namespace CW.ViewModels
             get; set;
         } = string.Empty;
 
- 
+
         public ICommand ApplyRegexCommand =>
              ReactiveCommand.Create(() => Model.Positions = new RegexTester() { Input = Model.Text, Pattern = RegexPattern }.Matches);
 

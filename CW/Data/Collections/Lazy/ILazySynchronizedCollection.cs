@@ -1,11 +1,7 @@
 ﻿using Core.Classes;
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CW.Data
 {
@@ -14,10 +10,10 @@ namespace CW.Data
 
         ILazySynchronizedCollection<T> Include(int id, string propertyName);
 
-       
 
-        ILazySynchronizedCollection<T>  Include<U>(int id, Expression<Func<T, U>> selector);
-      
+
+        ILazySynchronizedCollection<T> Include<U>(int id, Expression<Func<T, U>> selector);
+
 
         ILazySynchronizedCollection<T> Include(string propertyName);
 
@@ -25,7 +21,7 @@ namespace CW.Data
 
 
         ILazySynchronizedCollection<T> Include<U>(Expression<Func<T, U>> selector);
-       
+
 
 
     }

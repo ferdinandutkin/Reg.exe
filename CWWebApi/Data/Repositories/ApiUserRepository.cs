@@ -4,8 +4,8 @@ using Microsoft.EntityFrameworkCore;
 namespace CWWebApi.Data
 {
     class ApiUserRepository : PropertyAccessEnumerableRepository<ApiUser>
-   {
-        
+    {
+
         public ApiUserRepository(DbContext context) : base(context)
         {
 

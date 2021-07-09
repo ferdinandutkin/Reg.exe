@@ -13,7 +13,7 @@
 
         <Border Background="{StaticResource SlateBrush}" CornerRadius="12" 
                 HorizontalAlignment="Stretch" BorderThickness="0">
-            <TextBlock x:Name="title" 
+            <TextBlock x:Name="Title" 
                        TextWrapping="Wrap" 
 
                        Style="{StaticResource MenuButtonsStyle}"/>

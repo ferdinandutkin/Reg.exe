@@ -1,10 +1,6 @@
 ﻿using Microsoft.Xaml.Behaviors;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -16,7 +12,7 @@ namespace CW.Views.Behaviours
         public static readonly DependencyProperty RegularExpressionProperty =
              DependencyProperty.RegisterAttached("RegularExpression", typeof(string), typeof(AllowableCharactersTextBoxBehavior),
              new FrameworkPropertyMetadata(".*"));
-       
+
 
         public static string GetRegularExpression(FrameworkElement frameworkElement) => frameworkElement.GetValue(RegularExpressionProperty) as string;
         public static void SetRegularExpression(FrameworkElement frameworkElement, string value) => frameworkElement.SetValue(RegularExpressionProperty, value);
@@ -28,8 +24,8 @@ namespace CW.Views.Behaviours
 
 
         public static int GetMaxLength(FrameworkElement frameworkElement) => (int)frameworkElement.GetValue(MaxLengthProperty);
-        public static void SetMaxLength(FrameworkElement frameworkElement,  int value) => frameworkElement.SetValue(MaxLengthProperty, value);
- 
+        public static void SetMaxLength(FrameworkElement frameworkElement, int value) => frameworkElement.SetValue(MaxLengthProperty, value);
+
         protected override void OnAttached()
         {
             base.OnAttached();
@@ -63,20 +59,20 @@ namespace CW.Views.Behaviours
             DataObject.RemovePastingHandler(AssociatedObject, OnPaste);
         }
 
-        private bool IsValid(string newText, bool paste) => !ExceedsMaxLength(newText, paste) && Regex.IsMatch(newText, GetRegularExpression(this.AssociatedObject));
+        private bool IsValid(string newText, bool paste) => !ExceedsMaxLength(newText, paste) && Regex.IsMatch(newText, GetRegularExpression(AssociatedObject));
 
         private bool ExceedsMaxLength(string newText, bool paste)
         {
-            if (GetMaxLength(this.AssociatedObject) == 0) return false;
+            if (GetMaxLength(AssociatedObject) == 0) return false;
 
-            return LengthOfModifiedText(newText, paste) > GetMaxLength(this.AssociatedObject);
+            return LengthOfModifiedText(newText, paste) > GetMaxLength(AssociatedObject);
         }
 
         private int LengthOfModifiedText(string newText, bool paste)
         {
-            var countOfSelectedChars = this.AssociatedObject.SelectedText.Length;
-            var caretIndex = this.AssociatedObject.CaretIndex;
-            string text = this.AssociatedObject.Text;
+            var countOfSelectedChars = AssociatedObject.SelectedText.Length;
+            var caretIndex = AssociatedObject.CaretIndex;
+            string text = AssociatedObject.Text;
 
             if (countOfSelectedChars > 0 || paste)
             {

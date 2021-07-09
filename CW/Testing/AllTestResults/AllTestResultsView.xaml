@@ -24,8 +24,8 @@
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" x:Name="titleLabel" Text="Тестирование" Style="{StaticResource PageTitle}" />
-            <Button Grid.Column="1" x:Name="newTest" Content ="Новый тест" 
+            <TextBlock Grid.Column="0" x:Name="TitleLabel" Text="Тестирование" Style="{StaticResource PageTitle}" />
+            <Button Grid.Column="1" x:Name="NewTest" Content ="Новый тест" 
                     Height="60" Margin="10"
                     Style="{StaticResource BaseButton}"
                     HorizontalAlignment="Center"/>
@@ -34,7 +34,7 @@
 
 
 
-        <DataGrid x:Name="results" Grid.Row="1"
+        <DataGrid x:Name="Results" Grid.Row="1"
         ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" RowStyle="{StaticResource DataGridRowStyle}" Style="{StaticResource DataGrid}">
             <DataGrid.Columns>
                 <DataGridTextColumn  Header="Пользователь" Width="*" Binding="{Binding User.Name}"/>

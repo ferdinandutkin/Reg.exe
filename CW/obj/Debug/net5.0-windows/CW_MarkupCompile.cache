@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\ja\source\repos\oop_cw\CW\obj\Debug\net5.0-windows\
+C:\Users\ja\Source\Repos\oop_cw\CW\obj\Debug\net5.0-windows\
 CW
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\ja\source\repos\oop_cw\CW\App.xaml
+C:\Users\ja\Source\Repos\oop_cw\CW\App.xaml
 37-2027537505
 
 101-117925599
-3891179440402
+389-1395147958
 DialogService\ViewModels\DialogOkCancel\Views\AddTestCaseDialog.xaml;DialogService\ViewModels\DialogOkCancel\Views\QuestionDialog.xaml;Login\BindablePasswordBox.xaml;Login\LoginControl.xaml;Login\MainLoginControl.xaml;Login\Welcome.xaml;MainWindow\MainWindow.xaml;NavigationControl\MenuControl\MenuControl.xaml;NavigationControl\MenuControl\MenuEntryPreviewView.xaml;NavigationControl\MenuEntryHost\MenuEntryHostView.xaml;NavigationControl\NavigationControl.xaml;NodeBuilder\Views\AnchorValueEditorView.xaml;NodeBuilder\Views\CustomNodeView.xaml;NodeBuilder\Views\DynamicNodeView.xaml;NodeBuilder\Views\NodeBuilder.xaml;NodeBuilder\Views\QuantifierEditorView.xaml;NodeBuilder\Views\RegexTextValueEditorView.xaml;NodeBuilder\Views\TextValueEditorView.xaml;NodeBuilder\Views\WildcardEditorView.xaml;NodeBuilder\Views\СustomNodeView.xaml;Questions\QuestionsView.xaml;Reference\ReferenceControl\ReferenceControl.xaml;Reference\ReferenceEditingControl.xaml;RegexTesting\RegexTester\RegexTesterView.xaml;RegexTesting\RegexTestingControl.xaml;Resources\Colors.xaml;Resources\StyleDictionary.xaml;Resources\TemplateDictionary.xaml;Testing\AllTestResults\AllTestResultsView.xaml;Testing\AnswerResult\AnswerResultView.xaml;Testing\Answer\AnswerView.xaml;Testing\Question\QuestionCreationControl\QuestionCreationControl.xaml;Testing\Question\QuestionView.xaml;Testing\TestCase\AddTestCase.xaml;Testing\TestingControl.xaml;Testing\TestResult\TestResultView.xaml;Testing\Test\TestControl.xaml;
 
-False
+True
 

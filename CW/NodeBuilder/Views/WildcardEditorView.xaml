@@ -19,7 +19,7 @@
         
         <GroupBox Header="Wildcard type" BorderThickness="0">
             <ComboBox 
-			x:Name="wildcardType"     
+			x:Name="WildcardType"     
           SelectedValuePath="Value"
           DisplayMemberPath="Description"
         />
@@ -40,7 +40,7 @@
                     </Style.Triggers>
                 </Style>
             </GroupBox.Style>
-            <CheckBox x:Name="invert"/>
+            <CheckBox x:Name="Invert"/>
         </GroupBox>
 
 
@@ -57,7 +57,7 @@
                     </Style.Triggers>
                 </Style>
             </GroupBox.Style>
-            <CheckBox x:Name="matchNewlines"/>
+            <CheckBox x:Name="MatchNewlines"/>
         </GroupBox>
 
         <StackPanel>
@@ -76,19 +76,19 @@
 
 
             <GroupBox Header="Whitespace">
-                <CheckBox x:Name="whitespace"/>
+                <CheckBox x:Name="Whitespace"/>
             </GroupBox>
             <GroupBox Header="Uppercase Letters">
-                <CheckBox x:Name="uppercaseLetters"/>
+                <CheckBox x:Name="UppercaseLetters"/>
             </GroupBox>
             <GroupBox Header="Lowercase Letters">
-                <CheckBox x:Name="lowercaseLetters"/>
+                <CheckBox x:Name="LowercaseLetters"/>
             </GroupBox>
             <GroupBox Header="Digits">
-                <CheckBox x:Name="digits"/>
+                <CheckBox x:Name="Digits"/>
             </GroupBox>
             <GroupBox Header="Underscore">
-                <CheckBox x:Name="underscore"/>
+                <CheckBox x:Name="Underscore"/>
             </GroupBox>
         </StackPanel>
 

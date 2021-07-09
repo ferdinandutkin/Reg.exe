@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tJO2tPsAdQnwlNTyG3lHh4FnV5qCeG+MJG/lTtf3WbQu86cIy+ReLpE9emtBfsl/QoYYDdIDxGqcsb/l4M30iQ==",
+  "dgSpecHash": "xQWhprIdVoQcHGFALnKjntNzgkGKDdsV8eVPXCG1KHE64rEmC4URZdiD7uBq1EYjYHYGMcd8pJKezyEH8CP4NA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ja\\source\\repos\\oop_cw\\CW\\CW.csproj",
+  "projectFilePath": "C:\\Users\\ja\\Source\\Repos\\oop_cw\\CW\\CW.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ja\\.nuget\\packages\\dynamicdata\\7.1.16\\dynamicdata.7.1.16.nupkg.sha512",
     "C:\\Users\\ja\\.nuget\\packages\\extended.wpf.toolkit\\3.6.0\\extended.wpf.toolkit.3.6.0.nupkg.sha512",

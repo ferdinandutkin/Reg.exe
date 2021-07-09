@@ -22,7 +22,7 @@ namespace Core.Models
         }
 
 
-      
+
         [Reactive]
         public int End
         {

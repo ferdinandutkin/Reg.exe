@@ -1,9 +1,7 @@
 ﻿using Core.Models;
-using Microsoft.AspNetCore.Mvc;
 using CWWebApi.Data;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace CWWebApi.Controllers
 {
@@ -13,15 +11,15 @@ namespace CWWebApi.Controllers
     {
 
 
-    
-       public TestCaseController(IPropertyAccessEnumerableRepository<TestCase> repository, ILogger<TestCaseController> logger) :
-            base(repository, logger)
+
+        public TestCaseController(IPropertyAccessEnumerableRepository<TestCase> repository, ILogger<TestCaseController> logger) :
+             base(repository, logger)
         {
-            
+
         }
 
 
-        
+
     }
 }
 

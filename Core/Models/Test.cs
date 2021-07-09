@@ -9,7 +9,7 @@ namespace Core.Models
 {
     public class Test : ReactiveObject, IList<Answer>
     {
-      
+
         [Reactive]
         public ObservableCollection<Answer> Answers
         {
@@ -22,7 +22,7 @@ namespace Core.Models
 
         public Answer this[int index] { get => ((IList<Answer>)Answers)[index]; set => ((IList<Answer>)Answers)[index] = value; }
 
-        
+
 
         public Test(IEnumerable<InputQuestion> questions)
         {

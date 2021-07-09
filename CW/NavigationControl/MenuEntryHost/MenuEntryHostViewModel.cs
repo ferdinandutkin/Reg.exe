@@ -9,11 +9,11 @@ namespace CWRegexTester
         static MenuEntryHostViewModel()
         {
             Splat.Locator.CurrentMutable.Register(() => new MenuEntryHostView(), typeof(IViewFor<MenuEntryHostView>));
-  
+
         }
 
 
-        
+
         public class DraggingTemplate : ReactiveObject
         {
 
@@ -57,6 +57,6 @@ namespace CWRegexTester
 
         }
     }
-    
+
 }
 

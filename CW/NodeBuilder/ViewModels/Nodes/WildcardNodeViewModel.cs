@@ -1,13 +1,9 @@
 ﻿using DynamicData;
-using NodeBuilder.Models;
 using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.Views;
 using ReactiveUI;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reactive.Linq;
-using System.Text;
 
 namespace NodeBuilder.ViewModels.Nodes
 {
@@ -30,7 +26,7 @@ namespace NodeBuilder.ViewModels.Nodes
         public WildcardNodeViewModel()
         {
             Name = "Wildcard";
-            
+
 
             Input = new ValueNodeInputViewModel<string>();
 

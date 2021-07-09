@@ -8,8 +8,8 @@ using System.Text.RegularExpressions;
 
 namespace Core.Models
 {
-  
-    public class RegexTester : ReactiveObject 
+
+    public class RegexTester : ReactiveObject
     {
 
 
@@ -52,20 +52,20 @@ namespace Core.Models
                 }
 
             }
-            
+
         }
-        
-      
+
+
         public RegexTester()
         {
             matches = this.WhenAnyValue(m => m.Input, m => m.Pattern)
-                             .Select(_ =>                              
+                             .Select(_ =>
                              new ObservableCollection<Position>(Regex.Matches(Input, Pattern)
                              .Select(match => new Position(match.Index, match.Index + match.Length - 1))))
-                            
+
                              .ToProperty(this, m => m.Matches);
 
-           
+
 
         }
 

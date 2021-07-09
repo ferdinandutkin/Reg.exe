@@ -1,6 +1,5 @@
 ﻿using DynamicData;
 using NodeNetwork.Toolkit.ValueNode;
-using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
 
@@ -21,18 +20,18 @@ namespace NodeBuilder.ViewModels.Nodes
         {
             Name = "Output";
 
-            this.CanBeRemovedByUser = false;
+            CanBeRemovedByUser = false;
 
             ResultInput = new ValueNodeInputViewModel<string>
             {
                 Name = "Value",
-               
+
             };
-            this.Inputs.Add(ResultInput);
+            Inputs.Add(ResultInput);
 
 
 
-         
+
 
         }
     }

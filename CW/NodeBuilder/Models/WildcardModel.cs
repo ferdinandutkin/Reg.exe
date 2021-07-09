@@ -1,8 +1,5 @@
 ﻿using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace NodeBuilder.Models
 {
@@ -22,7 +19,7 @@ namespace NodeBuilder.Models
         [Reactive]
         public bool MatchNewlines
         {
-            get; 
+            get;
             set;
         }
 
@@ -53,10 +50,10 @@ namespace NodeBuilder.Models
         public bool AllowWhitespace { get; set; }
 
         [Reactive]
-        public bool  AllowUppercase { get; set; }
+        public bool AllowUppercase { get; set; }
 
         [Reactive]
-        public bool  AllowLowercase { get; set; }
+        public bool AllowLowercase { get; set; }
 
         [Reactive]
         public bool AllowDigits { get; set; }
@@ -80,7 +77,7 @@ namespace NodeBuilder.Models
                  (WildcardType.Custom, _) => GetContentsCustom(Invert),
                  _ => ".",
              };
- 
+
 
 
         private string GetContentsCustom(bool invert)
@@ -96,20 +93,20 @@ namespace NodeBuilder.Models
 
             return inputs switch
             {
-               
+
                 (true, false, false, false, false, false) => "[]",
                 (true, false, false, false, true, false) => @"\D",
                 (true, true, false, false, false, false) => @"\S",
                 (true, false, true, true, true, true) => @"\W",
 
-               
+
                 (false, true, true, true, true, true) => ".",
                 (false, false, false, false, false, true) => "_",
                 (false, false, false, false, true, false) => @"\d",
                 (false, true, false, false, false, false) => @"\s",
                 (false, false, true, true, true, true) => @"\w",
 
-              
+
                 _ => GetClassContents(invert: invert, w: inputs.w, L: inputs.L, l: inputs.l, d: inputs.d, u: inputs.u),
             };
 

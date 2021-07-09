@@ -1,12 +1,6 @@
-﻿using CW.ViewModels;
-using CWRegexTester;
+﻿using CWRegexTester;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CW.ViewModels
 {
@@ -20,8 +14,8 @@ namespace CW.ViewModels
 
             NavigationControlViewModel = new NavigationControlViewModel();
 
-            
-          
+
+
 
 
             NavigationControlViewModel.AddEntry(() => new TestingControlViewModel(), new MenuEntryPreview() { Title = "Тестирование", MinRoleRequirment = Core.Models.UserRoles.User });

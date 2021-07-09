@@ -25,55 +25,27 @@ namespace ConsoleClient
             };
 
 
-            protected async ValueTask<HttpResponseMessage> BasicDeleteAsync(params object[] additionalParams)
-            {
-                return await client.DeleteAsync(BuildParams(additionalParams));
-            }
+            protected async ValueTask<HttpResponseMessage> BasicDeleteAsync(params object[] additionalParams) => await client.DeleteAsync(BuildParams(additionalParams));
 
-                protected string BuildParams(params object[] additionalParams)
-            {
-                var ret = string.Join('/', additionalParams.Prepend(routeToController));
-                return ret;
-            }
+            protected string BuildParams(params object[] additionalParams) => string.Join('/', additionalParams.Prepend(routeToController));
 
             public BasicApiControllerInteraction(ServerInteraction serverInteraction, string routeToController)
             {
-                this.Parent = serverInteraction;
-                this.client = serverInteraction.client;
+                Parent = serverInteraction;
+                client = serverInteraction.client;
                 this.routeToController = routeToController;
             }
 
 
-            protected async ValueTask<U> BasicGetAsync<U>(params object[] additionalParams)
-            {
-               
+            protected async ValueTask<U> BasicGetAsync<U>(params object[] additionalParams) => await client.GetFromJsonAsync<U>(BuildParams(additionalParams), options).ConfigureAwait(false);
 
-                return await client.GetFromJsonAsync<U>(BuildParams(additionalParams), options).ConfigureAwait(false);
-               
-
-            }
-
-            protected async ValueTask<IEnumerable<U>> BasicGetCollectionAsync<U>(params object[] additionalParams)
-            {
-                return await BasicGetAsync<List<U>>(additionalParams).ConfigureAwait(false);
-            }
+            protected async ValueTask<IEnumerable<U>> BasicGetCollectionAsync<U>(params object[] additionalParams) => await BasicGetAsync<List<U>>(additionalParams).ConfigureAwait(false);
 
 
-
-            protected U BasicGet<U>(params object[] additionalParams)
-            {
-                return BasicGetAsync<U>(additionalParams).Result;
-
-            }
+            protected U BasicGet<U>(params object[] additionalParams) => BasicGetAsync<U>(additionalParams).Result;
 
 
-            protected IEnumerable<U> BasicGetCollection<U>(params object[] additionalParams)
-            {
-                return BasicGetCollectionAsync<U>(additionalParams).Result;
-            }
-
-
-
+            protected IEnumerable<U> BasicGetCollection<U>(params object[] additionalParams) => BasicGetCollectionAsync<U>(additionalParams).Result;
         }
 
 

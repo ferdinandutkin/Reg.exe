@@ -1,20 +1,16 @@
-﻿using System;
+﻿using NodeBuilder.Models;
+using NodeBuilder.ViewModels;
+using ReactiveUI;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Reactive.Disposables;
-using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Markup;
-using NodeBuilder.Models;
-using NodeBuilder.ViewModels;
-using NodeBuilder.ViewModels.Nodes;
-using ReactiveUI;
 
 namespace NodeBuilder.Views
 {
@@ -46,7 +42,7 @@ namespace NodeBuilder.Views
     }
 
 
-   
+
     public partial class QuantifierEditorView : UserControl, IViewFor<QuantifierValueEditorViewModel>
     {
         #region ViewModel
@@ -74,7 +70,7 @@ namespace NodeBuilder.Views
                 && popup.Child is FrameworkElement popupContent)
             {
                 popupContent.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
-                 
+
                 var emptySize = SystemParameters.VerticalScrollBarWidth + comboBox.Padding.Left + comboBox.Padding.Right;
                 comboBox.Width = emptySize + popupContent.DesiredSize.Width;
             }
@@ -88,34 +84,34 @@ namespace NodeBuilder.Views
 
             this.WhenActivated(d =>
             {
-                this.OneWayBind(ViewModel, vm => vm.Value.SearchType, v => v.searchType.ItemsSource,
+                this.OneWayBind(ViewModel, vm => vm.Value.SearchType, v => v.SearchType.ItemsSource,
                   _ => new EnumDescriptions<SearchType>()).DisposeWith(d);
-                this.Bind(ViewModel, vm => vm.Value.SearchType, v => v.searchType.SelectedValue).DisposeWith(d);
+                this.Bind(ViewModel, vm => vm.Value.SearchType, v => v.SearchType.SelectedValue).DisposeWith(d);
 
 
-               
-                this.OneWayBind(ViewModel, vm => vm.Value.RepetitionsType, v => v.repetitionsType.ItemsSource,
+
+                this.OneWayBind(ViewModel, vm => vm.Value.RepetitionsType, v => v.RepetitionsType.ItemsSource,
                     _ => new EnumDescriptions<RepetitionsType>()).DisposeWith(d);
 
-                this.Bind(ViewModel, vm => vm.Value.RepetitionsType, v => v.repetitionsType.SelectedValue).DisposeWith(d);
+                this.Bind(ViewModel, vm => vm.Value.RepetitionsType, v => v.RepetitionsType.SelectedValue).DisposeWith(d);
 
 
-                this.Bind(ViewModel, vm => vm.Value.Range.Start, v => v.rangeStart.Value).DisposeWith(d);
-                this.Bind(ViewModel, vm => vm.Value.Range.End, v => v.rangeEnd.Value).DisposeWith(d);
+                this.Bind(ViewModel, vm => vm.Value.Range.Start, v => v.RangeStart.Value).DisposeWith(d);
+                this.Bind(ViewModel, vm => vm.Value.Range.End, v => v.RangeEnd.Value).DisposeWith(d);
 
-                this.Bind(ViewModel, vm => vm.Value.Number, v => v.number.Value).DisposeWith(d);
+                this.Bind(ViewModel, vm => vm.Value.Number, v => v.Number.Value).DisposeWith(d);
 
 
             });
 
 
-            SetWidthFromItems(repetitionsType);
-            SetWidthFromItems(searchType);
-            
+            SetWidthFromItems(RepetitionsType);
+            SetWidthFromItems(SearchType);
+
         }
- 
 
 
-         
+
+
     }
 }

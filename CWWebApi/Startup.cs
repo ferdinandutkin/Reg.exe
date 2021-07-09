@@ -9,12 +9,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.FileProviders;
-using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System.IO;
-using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
@@ -24,7 +20,7 @@ namespace CWWebApi
     {
         public Startup(IConfiguration configuration)
         {
-       
+
             Configuration = configuration;
         }
 
@@ -33,10 +29,10 @@ namespace CWWebApi
         // This method gets called by the runtime. Use this method to add services to the container.
 
 
-        
+
         public void ConfigureServices(IServiceCollection services)
         {
- 
+
 
 
             services.AddAuthentication(a =>
@@ -56,7 +52,7 @@ namespace CWWebApi
                     b.SaveToken = true;
                     b.TokenValidationParameters = new TokenValidationParameters()
                     {
-                     
+
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = JwtSettings.GetSecurityKey(),
                         ValidateIssuer = false,
@@ -72,41 +68,42 @@ namespace CWWebApi
             services.AddScoped(typeof(IPropertyAccessEnumerableRepository<>), typeof(PropertyAccessEnumerableRepository<>));
 
             services.AddScoped(typeof(IEnumerableRepository<>), typeof(PropertyAccessEnumerableRepository<>));
- 
+
 
             //OPEN GENERICS СПАСИБО ЛЕГЕНДА (жаль я поздно о них узнал)
 
             services.AddScoped<IEnumerableRepository<ApiUser>, ApiUserRepository>();
 
             services.AddScoped<IPropertyAccessEnumerableRepository<InputQuestion>, QuestionsRepository>();
-           
+
 
             services.AddScoped<IPropertyAccessEnumerableRepository<TestCase>, TestCaseRepository>();
 
 
             services.AddScoped<IEnumerableRepository<User>, PropertyAccessEnumerableRepository<User>>();
-   
+
             services.AddScoped<IPropertyAccessEnumerableRepository<TestResult>, ResultsRepository>();
 
 
             services.AddScoped<IUserManagerService, UserManagerService>();
 
-          
 
-             
+
+
             services.AddControllers().AddJsonOptions(
-                configure => {
+                configure =>
+                {
                     configure.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
                     configure.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault;
-                    }
+                }
                 );
-                    
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("regexe", new OpenApiInfo { Title = "regexe", Version = "v1" });
                 c.SchemaFilter<ApplyCustomSchemaFilters>();
                 c.DocumentFilter<RemoveSchemasFilter>();
-                
+
 
                 var securitySchema = new OpenApiSecurityScheme
                 {
@@ -138,7 +135,7 @@ namespace CWWebApi
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseStaticFiles();
-            
+
 
 
 
@@ -147,18 +144,18 @@ namespace CWWebApi
             app.UseSwaggerUI(c =>
             {
                 c.RoutePrefix = "";
-                
+
                 c.InjectStylesheet("style.css");
                 c.SwaggerEndpoint("/swagger/regexe/swagger.json", "Reg.exe WebApi v1");
-                
+
 
             });
 
- 
+
 
             app.UseHttpsRedirection();
 
-            
+
 
             app.UseRouting();
 
@@ -169,7 +166,7 @@ namespace CWWebApi
             {
 
 
-                 
+
 
                 endpoints.MapControllers();
             });

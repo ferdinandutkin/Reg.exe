@@ -1,17 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using CWWebApi.Security;
-using Microsoft.Extensions.Logging;
-using CWWebApi.Data;
+﻿using Core.Classes;
 using Core.Models;
-using Core.Classes;
-using Microsoft.AspNetCore.Authorization;
-using System.IdentityModel.Tokens.Jwt;
-using Microsoft.IdentityModel.Tokens;
-using System.Security.Claims;
-using System;
-using System.Threading.Tasks;
-using System.Linq;
+using CWWebApi.Data;
 using CWWebApi.Models;
+using CWWebApi.Security;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
+using System.Security.Claims;
 
 namespace CWWebApi.Controllers
 {
@@ -32,7 +31,7 @@ namespace CWWebApi.Controllers
             ILogger<UserController> logger
             ) : base(userRepostitory, logger)
         {
-            this.userManager = userManagerService;
+            userManager = userManagerService;
 
 
             this.logger = logger;
@@ -51,7 +50,7 @@ namespace CWWebApi.Controllers
         }
 
 
-       
+
 
 
 
@@ -69,19 +68,19 @@ namespace CWWebApi.Controllers
 
 
 
- 
+
                 var tokenDescriptor = new SecurityTokenDescriptor
                 {
-                   
-                    Subject = 
+
+                    Subject =
                     new ClaimsIdentity(userManager.GetRoles(login)
                     .Select(role => new Claim(ClaimTypes.Role, role.UserRole.ToString()))
                     .Prepend(new Claim(ClaimTypes.Name, loginModel.Login))
                     .Prepend(new Claim(ClaimTypes.SerialNumber, userManager.FindUser(login).Id.ToString())
                     ))
                    ,
-                        
-                     
+
+
                     Issuer = JwtSettings.Issuer,
                     Audience = JwtSettings.Audience,
                     Expires = DateTime.UtcNow.AddDays(3),
@@ -91,7 +90,7 @@ namespace CWWebApi.Controllers
                 var token = tokenHandler.CreateToken(tokenDescriptor);
                 var tokenString = tokenHandler.WriteToken(token);
 
-                 
+
                 logger.LogInformation($"Залогинился: {login}, {passwordHash}");
                 return Ok(tokenString);
             }
@@ -126,9 +125,9 @@ namespace CWWebApi.Controllers
 
         public bool RegisterAdmin([FromBody] RegisterModel registerModel)
         {
-               var (login, password) = registerModel;
-             
-                var ret = userManager.Register(login, password, new Role[] {
+            var (login, password) = registerModel;
+
+            var ret = userManager.Register(login, password, new Role[] {
                     new Role() {UserRole = UserRoles.Anonymous},
                     new Role() { UserRole = UserRoles.Admin },
                     new Role() { UserRole = UserRoles.User }
@@ -137,7 +136,7 @@ namespace CWWebApi.Controllers
 
             logger.LogInformation($"Удалось зарегистрировать {login}, {password}? {ret}");
             return ret;
- 
+
 
         }
 

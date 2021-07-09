@@ -1,9 +1,8 @@
-﻿using System.Reactive.Disposables;
+﻿using NodeBuilder.ViewModels;
+using ReactiveUI;
+using System.Reactive.Disposables;
 using System.Windows;
 using System.Windows.Controls;
-using NodeBuilder.ViewModels;
-using NodeBuilder.ViewModels.Nodes;
-using ReactiveUI;
 
 namespace NodeBuilder.Views
 {
@@ -32,8 +31,8 @@ namespace NodeBuilder.Views
 
             this.WhenActivated(d =>
             {
-                this.Bind(ViewModel, vm => vm.Value.Text, v => v.valueTextBox.Text).DisposeWith(d);
-                this.Bind(ViewModel, vm => vm.Value.EscapeSpecial, v => v.escapeSpecial.IsChecked).DisposeWith(d);
+                this.Bind(ViewModel, vm => vm.Value.Text, v => v.ValueTextBox.Text).DisposeWith(d);
+                this.Bind(ViewModel, vm => vm.Value.EscapeSpecial, v => v.EscapeSpecial.IsChecked).DisposeWith(d);
             });
         }
     }

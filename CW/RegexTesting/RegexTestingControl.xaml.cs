@@ -17,14 +17,14 @@ namespace CW.Views
 
             this.WhenActivated(d =>
             {
-                this.OneWayBind(ViewModel, vm => vm.CurrentControlViewModel, v => v.currentVMHost.ViewModel).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.CurrentControlViewModel, v => v.CurrentVmHost.ViewModel).DisposeWith(d);
 
 
 
- 
- 
 
-            
+
+
+
             });
         }
     }

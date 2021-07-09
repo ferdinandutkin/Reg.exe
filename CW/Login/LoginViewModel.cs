@@ -3,11 +3,6 @@ using CW.Views;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
 
 namespace CW.ViewModels
@@ -23,8 +18,9 @@ namespace CW.ViewModels
         [Reactive]
         public string Password { get; set; }
 
-        public ICommand LoginAsAnonymousCommand => ReactiveCommand.Create(() => {
-           var res = ServerInteractionSigleton.Instance.User.LoginAsAnonymous();
+        public ICommand LoginAsAnonymousCommand => ReactiveCommand.Create(() =>
+        {
+            var res = ServerInteractionSigleton.Instance.User.LoginAsAnonymous();
             if (res)
             {
                 OnLoginAction();
@@ -71,17 +67,14 @@ namespace CW.ViewModels
                 if (res)
                 {
                     OnLoginAction();
-                  
+
                 }
                 else Errors = "Не удалось войти";
             }
             );
 
-        private void ValidateConnection()
-        {
-            
-        }
-        IObservable<bool> CanRegister;
+
+        readonly IObservable<bool> CanRegister;
         public ICommand Register => ReactiveCommand.Create(() =>
         {
             bool res = false;
@@ -97,13 +90,12 @@ namespace CW.ViewModels
                         Errors = "Такой пользователь уже существует";
                     }
                 }
-                
+
             }
 
-            catch(Exception)
+            catch (Exception)
             {
-
-                ValidateConnection();
+                IsBadConnection = true;
             }
             finally
             {
@@ -112,18 +104,18 @@ namespace CW.ViewModels
 
             if (res)
             {
-               Errors = "Уcпешная регистрация";
+                Errors = "Уcпешная регистрация";
             }
 
         }, CanRegister);
 
-        
+
 
 
         [Reactive]
         public bool IsAlreadyRegistered
         {
-            get; set; 
+            get; set;
         }
 
         [Reactive]
@@ -133,18 +125,11 @@ namespace CW.ViewModels
         }
 
 
-        public LoginViewModel()
-        {
+        public LoginViewModel() =>
             //я не знаю что с ним но если он настаивает
-            CanRegister = this.WhenAnyValue((vm => vm.Login), vm => vm.Password,  (login, password) =>
-            {
-                
-               return login is not null && password is not null && !string.IsNullOrWhiteSpace(login.Trim()) && !(password.Contains(' ')) && !(password.Length > 6);
-             
-                
-            });
-        }
-
-
+            CanRegister = this.WhenAnyValue((vm => vm.Login), vm => vm.Password,
+                (login, password) => login is not null && password is not null &&
+                                     !string.IsNullOrWhiteSpace(login.Trim()) && !(password.Contains(' ')) &&
+                                     !(password.Length > 6));
     }
 }

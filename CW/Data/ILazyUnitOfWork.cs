@@ -1,12 +1,8 @@
-﻿using Core.Classes;
-using Core.Models;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using Core.Models;
 
 namespace CW.Data
 {
- 
+
     public interface ILazyUnitOfWork
     {
         ILazyRepository<InputQuestion> QuestionsRepository { get; }
@@ -18,7 +14,7 @@ namespace CW.Data
 
         ILazyRepository<ReferenceEntry> RefenceRepository { get; }
 
-        }
- 
+    }
+
 
 }

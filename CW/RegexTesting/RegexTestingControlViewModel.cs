@@ -1,8 +1,7 @@
-﻿using CW.Views;
+﻿using Core.Models;
+using CW.Views;
 using ReactiveUI;
-
 using ReactiveUI.Fody.Helpers;
-using Core.Models;
 
 namespace CW.ViewModels
 {

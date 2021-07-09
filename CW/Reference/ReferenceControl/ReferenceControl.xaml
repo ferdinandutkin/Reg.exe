@@ -6,20 +6,20 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CWRegexTester"
              mc:Ignorable="d"
-			 x:Name="self"
+			 x:Name="Self"
 			 xmlns:rxui="http://reactiveui.net"
              d:DesignHeight="450" d:DesignWidth="800">
 
 	<UserControl.Resources>
 	 
-		<DataTemplate x:Key="listTemplate">
+		<DataTemplate x:Key="ListTemplate">
 			<Grid HorizontalAlignment="Stretch" Margin="0, 0, 0, 0">
 				<Grid.Style>
 					<Style TargetType="Grid">
-						<Setter Property="Background" Value="{Binding ListEntryBackgroundBrush, ElementName=self}"/>
+						<Setter Property="Background" Value="{Binding ListEntryBackgroundBrush, ElementName=Self}"/>
 						<Style.Triggers>
 							<Trigger Property="IsMouseOver" Value="True">
-								<Setter Property="Background" Value="{Binding ListEntryBackgroundMouseOverBrush, ElementName=self}"/>
+								<Setter Property="Background" Value="{Binding ListEntryBackgroundMouseOverBrush, ElementName=Self}"/>
 							</Trigger>
 						</Style.Triggers>
 					</Style>
@@ -28,22 +28,22 @@
 				<Run  Foreground="Black" Text="{Binding Info}"/></TextBlock>
 				<Viewbox Stretch="Uniform" Width="10" Height="20" HorizontalAlignment="Right" Margin="5" Cursor="SizeAll">
 					<Canvas Width="12.5" Height="30">
-						<Rectangle Canvas.Left="0" Canvas.Top="0" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=self}" StrokeThickness="0" />
-						<Rectangle Canvas.Left="7.5" Canvas.Top="0" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=self}" StrokeThickness="0" />
-						<Rectangle Canvas.Left="0" Canvas.Top="7.5" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=self}" StrokeThickness="0" />
-						<Rectangle Canvas.Left="7.5" Canvas.Top="7.5" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=self}" StrokeThickness="0" />
-						<Rectangle Canvas.Left="0" Canvas.Top="15" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=self}" StrokeThickness="0" />
-						<Rectangle Canvas.Left="7.5" Canvas.Top="15" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=self}" StrokeThickness="0" />
-						<Rectangle Canvas.Left="0" Canvas.Top="22.5" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=self}" StrokeThickness="0" />
-						<Rectangle Canvas.Left="7.5" Canvas.Top="22.5" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=self}" StrokeThickness="0" />
+						<Rectangle Canvas.Left="0" Canvas.Top="0" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=Self}" StrokeThickness="0" />
+						<Rectangle Canvas.Left="7.5" Canvas.Top="0" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=Self}" StrokeThickness="0" />
+						<Rectangle Canvas.Left="0" Canvas.Top="7.5" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=Self}" StrokeThickness="0" />
+						<Rectangle Canvas.Left="7.5" Canvas.Top="7.5" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=Self}" StrokeThickness="0" />
+						<Rectangle Canvas.Left="0" Canvas.Top="15" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=Self}" StrokeThickness="0" />
+						<Rectangle Canvas.Left="7.5" Canvas.Top="15" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=Self}" StrokeThickness="0" />
+						<Rectangle Canvas.Left="0" Canvas.Top="22.5" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=Self}" StrokeThickness="0" />
+						<Rectangle Canvas.Left="7.5" Canvas.Top="22.5" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=Self}" StrokeThickness="0" />
 					</Canvas>
 				</Viewbox>
 			</Grid>
 		</DataTemplate>
-		<ItemsPanelTemplate x:Key="listItemsPanelTemplate">
+		<ItemsPanelTemplate x:Key="ListItemsPanelTemplate">
 			<StackPanel HorizontalAlignment="Stretch"/>
 		</ItemsPanelTemplate>
-		<ControlTemplate x:Key="listItemsControlTemplate">
+		<ControlTemplate x:Key="ListItemsControlTemplate">
 			<ItemsPresenter HorizontalAlignment="Stretch"/>
 		</ControlTemplate>
 	</UserControl.Resources>
@@ -55,23 +55,23 @@
 			<RowDefinition Height="*"></RowDefinition>
 		</Grid.RowDefinitions>
 		<Grid Row="0">
-            <TextBlock x:Name="titleLabel" Margin="10, 0, 0, 0" Padding="0, 10, 0, 10" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="18" Foreground="White" FontFamily="Arial" Text="Test"/>
+            <TextBlock x:Name="TitleLabel" Margin="10, 0, 0, 0" Padding="0, 10, 0, 10" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="18" Foreground="White" FontFamily="Arial" Text="Test"/>
 		
 		</Grid>
 
-		<Grid Row="1" x:Name="searchBoxGrid" Margin="25,7,25,0" MaxWidth="300" VerticalAlignment="Top">
-			<TextBox x:Name="searchBox" TextWrapping="Wrap"/>
-            <TextBlock Margin="5, 0, 0, 0" x:Name="emptySearchBoxMessage" Text="Search..." IsHitTestVisible="False" Foreground="LightGray" Background="#FF6E6E6E" />
+		<Grid Row="1" x:Name="SearchBoxGrid" Margin="25,7,25,0" MaxWidth="300" VerticalAlignment="Top">
+			<TextBox x:Name="SearchBox" TextWrapping="Wrap"/>
+            <TextBlock Margin="5, 0, 0, 0" x:Name="EmptySearchBoxMessage" Text="Search..." IsHitTestVisible="False" Foreground="LightGray" Background="#FF6E6E6E" />
         </Grid>
 
 		<Grid Row="2" Margin="10,10,10,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
 			<ScrollViewer>
-				<ItemsControl x:Name="elementsList" Template="{StaticResource listItemsControlTemplate}" ItemsPanel="{StaticResource listItemsPanelTemplate}"  ItemTemplate="{StaticResource listTemplate}" IsTabStop="False">
+				<ItemsControl x:Name="ElementsList" Template="{StaticResource ListItemsControlTemplate}" ItemsPanel="{StaticResource ListItemsPanelTemplate}"  ItemTemplate="{StaticResource ListTemplate}" IsTabStop="False">
 					 
 					 
 				</ItemsControl>
 			</ScrollViewer>
-			<TextBlock x:Name="emptyMessage" Text="No info found" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+			<TextBlock x:Name="EmptyMessage" Text="No info found" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 		</Grid>
 	</Grid>
 

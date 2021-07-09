@@ -3,7 +3,6 @@ using CW.ViewModels;
 using ReactiveUI;
 using System.Reactive.Disposables;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace CW.Views
 {
@@ -20,18 +19,18 @@ namespace CW.Views
             this.WhenActivated(d =>
             {
 
-                this.Bind(ViewModel, vm => vm.Model.Text, v => v.textInput.Text).DisposeWith(d);
-                this.Bind(ViewModel, vm => vm.SelectedPosition, v => v.positions.SelectedValue).DisposeWith(d);
-                this.Bind(ViewModel, vm => vm.RegexPattern, v => v.regexInput.Text).DisposeWith(d);
-                
-                this.BindCommand(ViewModel, vm => vm.ApplyRegexCommand, v => v.applyRegex).DisposeWith(d);
+                this.Bind(ViewModel, vm => vm.Model.Text, v => v.TextInput.Text).DisposeWith(d);
+                this.Bind(ViewModel, vm => vm.SelectedPosition, v => v.Positions.SelectedValue).DisposeWith(d);
+                this.Bind(ViewModel, vm => vm.RegexPattern, v => v.RegexInput.Text).DisposeWith(d);
+
+                this.BindCommand(ViewModel, vm => vm.ApplyRegexCommand, v => v.ApplyRegex).DisposeWith(d);
             });
-          
+
 
         }
 
-        private void AddToSelected_Click(object sender, RoutedEventArgs e) => 
-             ViewModel.AddPositionCommand.Execute(new Position(textInput.SelectionStart, textInput.SelectionStart + textInput.SelectionLength - 1));
-      
+        private void AddToSelected_Click(object sender, RoutedEventArgs e) =>
+             ViewModel.AddPositionCommand.Execute(new Position(TextInput.SelectionStart, TextInput.SelectionStart + TextInput.SelectionLength - 1));
+
     }
 }

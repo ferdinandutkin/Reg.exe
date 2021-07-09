@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 namespace Core.Models
 {
-    public   class RegexAnswerVerifier : IAnswerVerifier
+    public class RegexAnswerVerifier : IAnswerVerifier
     {
         public bool IsValid(Answer answer)
         {

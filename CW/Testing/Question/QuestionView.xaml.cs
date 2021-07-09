@@ -18,9 +18,9 @@ namespace CW.Views
             InitializeComponent();
             this.WhenActivated(d =>
             {
-                this.OneWayBind(ViewModel, vm => vm.Model.Name, v => v.questionName.Text).DisposeWith(d);
-                this.OneWayBind(ViewModel, vm => vm.Model.Text, v => v.text.Text).DisposeWith(d);
-                this.OneWayBind(ViewModel, vm => vm.Model.Difficulty, v => v.difficulty.Text).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.Model.Name, v => v.QuestionName.Text).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.Model.Text, v => v.Text.Text).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.Model.Difficulty, v => v.Difficulty.Text).DisposeWith(d);
             });
         }
     }

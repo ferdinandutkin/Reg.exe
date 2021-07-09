@@ -8,8 +8,6 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CW.Data
 {
@@ -96,31 +94,31 @@ namespace CW.Data
                             SubscribeToInnerPropertiesChanged(notifiable);
                         }
                     }
-                    
+
                 }
 
                 //SubscribeToInnerPropertiesChanged(propValue);
-    
+
             }
         }
         public SynchronizedCollection(IEnumerable<T> entities) : this()
         {
-            this.CollectionChanged -= LazyObservableCollection_CollectionChanged;
+            CollectionChanged -= LazyObservableCollection_CollectionChanged;
             foreach (T entity in entities)
             {
-              
+
                 Add(entity);
                 entity.PropertyChanged += Item_PropertyChanged;
                 SubscribeToInnerPropertiesChanged(entity);
             }
-            this.CollectionChanged += LazyObservableCollection_CollectionChanged;
+            CollectionChanged += LazyObservableCollection_CollectionChanged;
 
         }
         public SynchronizedCollection()
         {
             LoadingManager = Locator.Current.GetService<IObjectManager<T>>();
 
-            this.CollectionChanged += LazyObservableCollection_CollectionChanged;
+            CollectionChanged += LazyObservableCollection_CollectionChanged;
         }
 
         private void LazyObservableCollection_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)

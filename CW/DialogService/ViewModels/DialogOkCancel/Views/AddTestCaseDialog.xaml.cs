@@ -11,24 +11,24 @@ namespace CW.Dialog.Views
     public partial class AddTestCaseDialog : ReactiveWindow<AddTestCaseDialogViewModel>, IDialogService<AddTestCaseDialogViewModel>
     {
 
-        
+
         public AddTestCaseDialog()
         {
             InitializeComponent();
 
             this.WhenActivated(d =>
             {
-                this.BindCommand(ViewModel, vm => vm.OkCommand, v => v.okButton).DisposeWith(d);
-                this.BindCommand(ViewModel, vm => vm.CancelCommand, v => v.cancelButton).DisposeWith(d);
-                this.Bind(ViewModel, vm => vm.AddTestCaseViewModel, v => v.addTestCase.ViewModel);
+                this.BindCommand(ViewModel, vm => vm.OkCommand, v => v.OkButton).DisposeWith(d);
+                this.BindCommand(ViewModel, vm => vm.CancelCommand, v => v.CancelButton).DisposeWith(d);
+                this.Bind(ViewModel, vm => vm.AddTestCaseViewModel, v => v.AddTestCase.ViewModel);
             });
 
-   
+
         }
 
-        private void OkCancelButton_Click(object sender, RoutedEventArgs e) => this.Close();
+        private void OkCancelButton_Click(object sender, RoutedEventArgs e) => Close();
 
-        void IDialogService<AddTestCaseDialogViewModel>.ShowDialog() => this.ShowDialog();
-        
+        void IDialogService<AddTestCaseDialogViewModel>.ShowDialog() => ShowDialog();
+
     }
 }

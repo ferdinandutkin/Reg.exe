@@ -3,7 +3,6 @@ using CW.Views;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using System;
-using System.Linq;
 using System.Reactive.Linq;
 using System.Windows.Input;
 
@@ -22,15 +21,15 @@ namespace CW.ViewModels
             get; set;
         }
 
-        
 
-         [Reactive]
+
+        [Reactive]
         private int CurrentAnswerNumber
         {
             get; set;
         }
 
-       
+
         public Answer CurrentAnswer => currentAnswer.Value;
 
         private readonly IObservable<bool> CanMoveForward;
@@ -43,14 +42,14 @@ namespace CW.ViewModels
         public TestControlViewModel(Test model)
         {
 
-            this.Model = model;
+            Model = model;
             currentAnswer = this.WhenAnyValue(vm => vm.CurrentAnswerNumber)
                    .Select(num => Model?[num]).ToProperty(this, vm => vm.CurrentAnswer);
-                  
-           
-           CanMoveForward = this.WhenAnyValue(vm =>
-            vm.CurrentAnswerNumber, CurrentAnswerNumber =>
-   CurrentAnswerNumber < Model.Count - 1);
+
+
+            CanMoveForward = this.WhenAnyValue(vm =>
+             vm.CurrentAnswerNumber, CurrentAnswerNumber =>
+    CurrentAnswerNumber < Model.Count - 1);
 
             CanMoveBackwards = this.WhenAnyValue(vm =>
            vm.CurrentAnswerNumber, CurrentAnswerNumber =>
@@ -63,7 +62,7 @@ namespace CW.ViewModels
 
         }
 
-        
+
         [Reactive]
         public ICommand Finish
         {
@@ -71,9 +70,9 @@ namespace CW.ViewModels
         }
 
         public ICommand NextAnswer => ReactiveCommand.Create(() => CurrentAnswerNumber++, CanMoveForward);
-     
+
 
         public ICommand PrevAnswer => ReactiveCommand.Create(() => CurrentAnswerNumber--, CanMoveBackwards);
-       
+
     }
 }

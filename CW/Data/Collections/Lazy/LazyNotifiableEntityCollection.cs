@@ -1,15 +1,9 @@
 ﻿using Core.Classes;
+using Splat;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using Splat;
-using System.Threading.Tasks;
-using System.Linq.Expressions;
 using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Diagnostics;
+using System.Linq;
 using System.Reflection;
 
 namespace CW.Data
@@ -48,7 +42,7 @@ namespace CW.Data
         }
 
 
-        bool TryMakeGenericType(Type genericType, out Type res, params Type[] genericArguments)
+        static bool TryMakeGenericType(Type genericType, out Type res, params Type[] genericArguments)
         {
             try
             {
@@ -112,13 +106,13 @@ namespace CW.Data
 
 
 
-                    return  genericArgument is not null
+                    return genericArgument is not null
                          &&
                          typeof(INotifiableEntity).IsAssignableFrom(genericArgument)
                          &&
                          Locator.Current.GetService(typeof(IObjectManager<>).MakeGenericType(genericArgument)) is not null;
 
-                    
+
                 }
                 else return false;
 

@@ -6,7 +6,6 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace CWWebApi.Security
 {
@@ -25,30 +24,30 @@ namespace CWWebApi.Security
             this.userRepository = userRepository;
             this.logger = logger;
         }
-            
+
         public bool IsRegistered(string login)
         {
             var ret = userRepository.Any(u => u.Name == login);
             logger.LogInformation($"Пользователь {login} уже существует? {ret}");
 
             return ret;
- 
+
         }
 
- 
+
         public User FindUser(string login) => userRepository.FirstOrDefault(user => user.Name == login);
 
         public IEnumerable<Role> GetRoles(string login)
         {
             if (IsRegistered(login))
             {
-               return apiUserRepo.GetAllWithPropertiesIncluded()
-                    .FirstOrDefault(apiUser => apiUser?.User?.Name == login)?.Roles ?? Enumerable.Empty<Role>();
+                return apiUserRepo.GetAllWithPropertiesIncluded()
+                     .FirstOrDefault(apiUser => apiUser?.User?.Name == login)?.Roles ?? Enumerable.Empty<Role>();
             }
             return Enumerable.Empty<Role>();
         }
 
-        public bool Login(string login, string passwordHash )
+        public bool Login(string login, string passwordHash)
         {
             var ret = apiUserRepo.GetAllWithPropertiesIncluded()
                 .FirstOrDefault(apiUser => apiUser?.User?.Name == login)?.Password is string password &&
@@ -67,11 +66,11 @@ namespace CWWebApi.Security
                 apiUserRepo.Add(new ApiUser { Password = password, Roles = roles.ToList(), User = new User() { Name = login } });
                 return true;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 return false;
             }
-             
+
         }
     }
 }

@@ -14,7 +14,7 @@
         <StackPanel DataContext="{Binding RelativeSource = {RelativeSource AncestorType= {x:Type local:QuantifierEditorView}}, Path= ViewModel}" Orientation="Vertical">
 
         <GroupBox Header ="Repetitions Type" BorderThickness="0">
-            <ComboBox x:Name="repetitionsType" SelectedValuePath="Value" DisplayMemberPath="Description"/>
+            <ComboBox x:Name="RepetitionsType" SelectedValuePath="Value" DisplayMemberPath="Description"/>
 
         </GroupBox>
         
@@ -32,8 +32,8 @@
                     </Style.Triggers>
                 </Style>
             </StackPanel.Style>
-            <xctk:IntegerUpDown Minimum="0" Width="{Binding ElementName=repetitionsType, Path=ActualWidth}"  x:Name="rangeStart" />
-            <xctk:IntegerUpDown Minimum="0"  Width="{Binding ElementName=repetitionsType, Path=ActualWidth}"  x:Name="rangeEnd"  />
+            <xctk:IntegerUpDown Minimum="0" Width="{Binding ElementName=RepetitionsType, Path=ActualWidth}"  x:Name="RangeStart" />
+            <xctk:IntegerUpDown Minimum="0"  Width="{Binding ElementName=RepetitionsType, Path=ActualWidth}"  x:Name="RangeEnd"  />
         </StackPanel>
 
 
@@ -55,14 +55,14 @@
                     </Style.Triggers>
                 </Style>
             </StackPanel.Style>
-            <xctk:IntegerUpDown Minimum="0" Width="{Binding ElementName=repetitionsType, Path=ActualWidth}"  x:Name="number" />
+            <xctk:IntegerUpDown Minimum="0" Width="{Binding ElementName=RepetitionsType, Path=ActualWidth}"  x:Name="Number" />
  
         </StackPanel>
             
             
             
         <GroupBox Header="Search Type" BorderThickness="0">
-            <ComboBox x:Name="searchType" SelectedValuePath="Value" DisplayMemberPath="Description"/>
+            <ComboBox x:Name="SearchType" SelectedValuePath="Value" DisplayMemberPath="Description"/>
         </GroupBox>
 
 	</StackPanel>

@@ -12,22 +12,22 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <StackPanel Orientation="Vertical"
                     VerticalAlignment="Center">
-                <views:AnswerView x:Name="answer"/>
+                <views:AnswerView x:Name="Answer"/>
 
                 <StackPanel Orientation="Horizontal"  
                         VerticalAlignment="Center" 
                         HorizontalAlignment="Center">
 
                     <Button Content="Назад" 
-                        x:Name="prev" 
+                        x:Name="Prev" 
                         Style="{StaticResource BaseButton}"/>
                     <Button Content="Дальше" 
-                        x:Name="next"
+                        x:Name="Next"
                         Style="{StaticResource BaseButton}"/>
                 </StackPanel>
 
                 <Button Content="Завершить тест"
-                    x:Name="finish"
+                    x:Name="Finish"
                     Style="{StaticResource BaseButton}"
                     HorizontalAlignment="Center"
                     Margin="0 20 0 0"/>

@@ -1,12 +1,9 @@
 ﻿using Core.Classes;
 using Core.Models;
 using CWWebApi.Data;
-using CWWebApi.Security;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -18,15 +15,15 @@ namespace CWWebApi.Controllers
     {
         private readonly IPropertyAccessEnumerableRepository<T> propAccessRepo;
         private readonly ILogger<BasicCRUDControllerWithPropertyAcess<T>> logger;
-        public BasicCRUDControllerWithPropertyAcess(IPropertyAccessEnumerableRepository<T> repository, ILogger<BasicCRUDControllerWithPropertyAcess<T>> logger) 
+        public BasicCRUDControllerWithPropertyAcess(IPropertyAccessEnumerableRepository<T> repository, ILogger<BasicCRUDControllerWithPropertyAcess<T>> logger)
             : base(repository, logger)
         {
-            this.propAccessRepo = repository;
+            propAccessRepo = repository;
             this.logger = logger;
         }
 
 
- 
+
         [Route("{id}/{property}/")]
         [HttpGet]
         public virtual string Get(int id, string property)
@@ -63,7 +60,7 @@ namespace CWWebApi.Controllers
             logger.LogInformation($"id : {id}, свойство : {property}, новое значение : {newVal} ");
         }
 
-       
+
     }
 }
 

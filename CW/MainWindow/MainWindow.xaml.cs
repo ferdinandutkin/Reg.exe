@@ -1,8 +1,4 @@
-﻿using CW.ViewModels;
-using System.Windows;
-using Splat;
-using Core.Models;
-using CW.Data;
+﻿using System.Windows;
 
 namespace CW.Views
 {
@@ -15,14 +11,14 @@ namespace CW.Views
         public MainWindow()
         {
 
-         
-            
+
+
 
 
             InitializeComponent();
-           
 
-            
+
+
 
         }
     }

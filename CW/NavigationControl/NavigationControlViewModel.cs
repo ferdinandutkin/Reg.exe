@@ -22,11 +22,11 @@ namespace CWRegexTester
         {
             MenuEntryHostViewModel.SelectedEntry = entry;
         }
-        
+
 
         void OnMenuItemSelected(MenuEntryPreview menuEntryPreview)
         {
-           MenuEntryHostViewModel.SelectedEntry = MenuControlViewModel.MenuEntryTemplates.Items.First(t => t.PreviewInstance == menuEntryPreview) ;
+            MenuEntryHostViewModel.SelectedEntry = MenuControlViewModel.MenuEntryTemplates.Items.First(t => t.PreviewInstance == menuEntryPreview);
         }
 
         static NavigationControlViewModel()
@@ -41,21 +41,21 @@ namespace CWRegexTester
 
         public void AddEntry(Func<object> entryFactory, MenuEntryPreview previewInstance) =>
              MenuControlViewModel.AddEntry(entryFactory, previewInstance);
-      
-        
+
+
         public NavigationControlViewModel()
         {
 
             MenuControlViewModel.SelectMenuEntry = ReactiveCommand.Create<MenuEntryPreview>(OnMenuItemSelected);
 
 
-            
-           // M
 
-           
+            // M
+
+
 
         }
 
-       
+
     }
 }

@@ -9,7 +9,7 @@ using System.Linq;
 namespace CWWebApi.Data
 {
 
-  
+
     public class PropertyAccessEnumerableRepository<T> : IPropertyAccessEnumerableRepository<T> where T : class, IEntity
     {
         protected readonly DbContext context;
@@ -28,16 +28,16 @@ namespace CWWebApi.Data
         {
             this.context = context;
             entities = context.Set<T>();
-        
+
 
         }
         public virtual IEnumerable<T> GetAll() => List;
         public virtual T Get(int id)
         {
 
-            return   List.SingleOrDefault(s => s.Id == id);
-          
- 
+            return List.SingleOrDefault(s => s.Id == id);
+
+
 
         }
         public virtual void Add(T entity)
@@ -65,9 +65,9 @@ namespace CWWebApi.Data
             context.SaveChanges();
         }
 
-       virtual public IEnumerable<T> GetAllWithPropertiesIncluded()
-            =>
-             entities.Include(context.GetIncludePaths<T>()).ToList();
-     
+        virtual public IEnumerable<T> GetAllWithPropertiesIncluded()
+             =>
+              entities.Include(context.GetIncludePaths<T>()).ToList();
+
     }
 }

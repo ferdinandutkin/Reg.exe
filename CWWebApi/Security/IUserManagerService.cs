@@ -1,10 +1,9 @@
 using Core.Models;
-using CWWebApi.Models;
 using System.Collections.Generic;
 
 namespace CWWebApi.Security
 {
-    public interface IUserManagerService 
+    public interface IUserManagerService
     {
         bool IsRegistered(string login);
 
@@ -17,7 +16,7 @@ namespace CWWebApi.Security
 
 
 
-       
+
         User FindUser(string login);
 
 

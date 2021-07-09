@@ -1,10 +1,7 @@
 ﻿
-using Core.Models;
-using Core.Classes;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Threading.Tasks;
 using ConsoleClient;
+using Core.Classes;
+using Core.Models;
 using System.Collections.Generic;
 
 namespace CW.Data
@@ -28,7 +25,7 @@ namespace CW.Data
 
 
 
-    public class QuestionRepository : ILazyRepository<InputQuestion>  
+    public class QuestionRepository : ILazyRepository<InputQuestion>
     {
 
         readonly ServerInteraction.APIControllerInteraction<InputQuestion> wrapper;
@@ -117,18 +114,17 @@ namespace CW.Data
             new LazyNotifiableEntityCollection<T>(wrapper.Get());
 
         public ISynchronizedCollection<T> GetAllWithPropertiesIncluded() => new SynchronizedCollection<T>(wrapper.GetIncludeAll());
-    
+
 
         public void Update(T entity) => wrapper.Update(entity);
 
         IEnumerable<T> IRepository<T>.GetAll() => wrapper.Get();
 
         IEnumerable<T> IRepository<T>.GetAllWithPropertiesIncluded() => wrapper.GetIncludeAll();
-        
+
     }
 
 
 
-   
+
 }
-     

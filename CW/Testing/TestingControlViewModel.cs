@@ -1,5 +1,4 @@
-﻿using Core.Classes;
-using Core.Models;
+﻿using Core.Models;
 using CW.Data;
 using CW.Views;
 using ReactiveUI;
@@ -19,31 +18,31 @@ namespace CW.ViewModels
         public AllTestResultsViewModel AllTestResultsViewModel
         {
             get; set;
-        } = new() 
+        } = new()
         {
-     
-           Model = UnitOfWorkSingleton.Instance.TestResulsRepository.GetAllWithPropertiesIncluded()
+
+            Model = UnitOfWorkSingleton.Instance.TestResulsRepository.GetAllWithPropertiesIncluded()
         };
 
         void OnTestFinish()
         {
             CurrentControlViewModel = TestResultViewModel;
 
- 
+
             var res = new TestResult(TestControlViewModel.Model.Answers, new RegexAnswerVerifier());
-           
+
             res.СompletionTime = DateTime.Now;
 
             TestResultViewModel.Model = res;
 
-       
-          
+
+
 
             ServerInteractionSigleton.Instance.CurrentUser.User.Results.Add(res);
 
 
             UnitOfWorkSingleton.Instance.UsersRepository.Update(ServerInteractionSigleton.Instance.CurrentUser.User);
-            
+
         }
 
 
@@ -69,17 +68,18 @@ namespace CW.ViewModels
         {
 
             CurrentControlViewModel = AllTestResultsViewModel;
-           AllTestResultsViewModel.StartNewTest =
-                ReactiveCommand.Create(() => {
-                    TestControlViewModel = new TestControlViewModel(new Test(UnitOfWorkSingleton.Instance.QuestionsRepository.GetAllWithPropertiesIncluded()));
-                
-                    TestControlViewModel.Finish = ReactiveCommand.Create(OnTestFinish, TestControlViewModel.CanFinish);
-                    CurrentControlViewModel = TestControlViewModel;
-                }
+            AllTestResultsViewModel.StartNewTest =
+                 ReactiveCommand.Create(() =>
+                 {
+                     TestControlViewModel = new TestControlViewModel(new Test(UnitOfWorkSingleton.Instance.QuestionsRepository.GetAllWithPropertiesIncluded()));
 
-                
-            );
-          
+                     TestControlViewModel.Finish = ReactiveCommand.Create(OnTestFinish, TestControlViewModel.CanFinish);
+                     CurrentControlViewModel = TestControlViewModel;
+                 }
+
+
+             );
+
         }
     }
 }

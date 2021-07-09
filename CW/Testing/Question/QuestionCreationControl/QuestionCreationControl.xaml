@@ -6,7 +6,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CW.Views"
              mc:Ignorable="d" 
-             x:Name="root"
+             x:Name="Root"
                 Background="Transparent"       
              xmlns:rxui="http://reactiveui.net"
               xmlns:behaviours="clr-namespace:CW.Views.Behaviours" xmlns:cw="clr-namespace:CW" xmlns:viewmodels="clr-namespace:CW.ViewModels" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
@@ -30,7 +30,7 @@
                        FontFamily="Arial"
                        FontSize="20"
                        TextAlignment="Center"/>
-            <TextBox x:Name="questionText"  
+            <TextBox x:Name="QuestionText"  
                      FontFamily="Arial" FontSize="16"
                      Style="{StaticResource ForTesting}"
                      Margin="10"/>
@@ -42,7 +42,7 @@
                        FontFamily="Arial"
                        FontSize="20"
                        TextAlignment="Center"/>
-            <TextBox x:Name="difficulty"  
+            <TextBox x:Name="Difficulty"  
                      FontFamily="Arial" FontSize="16"
              
                      Style="{StaticResource ForTesting}"
@@ -50,7 +50,7 @@
         </StackPanel>
 
 
-        <DataGrid x:Name="testCases" AutoGenerateColumns="False"  
+        <DataGrid x:Name="TestCases" AutoGenerateColumns="False"  
                 
                   ItemsSource="{Binding Model.TestCases}"
                  Grid.Column="0" Grid.Row="2"

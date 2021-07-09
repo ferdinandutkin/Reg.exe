@@ -117,7 +117,7 @@ new FrameworkPropertyMetadata(null, OnUpdate));
 
 
 
-   
+
         static void ProcessPositions(TextBlock tb, string text)
         {
 

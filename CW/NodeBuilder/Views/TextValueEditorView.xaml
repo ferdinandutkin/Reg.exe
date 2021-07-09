@@ -6,6 +6,6 @@
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="20" d:DesignWidth="100">
-    <TextBox  x:Name="valueTextBox"/>
+    <TextBox  x:Name="ValueTextBox"/>
      
 </UserControl>
